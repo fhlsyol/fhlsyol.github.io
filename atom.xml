@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Fhlsyol</title>
+  
+  <subtitle>Fhlsyol</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-12-22T12:58:19.737Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Fhlsyol</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>web前端基础</title>
+    <link href="http://yoursite.com/2019/12/21/day21-web-qian-duan-ji-chu/"/>
+    <id>http://yoursite.com/2019/12/21/day21-web-qian-duan-ji-chu/</id>
+    <published>2019-12-21T04:16:11.000Z</published>
+    <updated>2019-12-22T12:58:19.737Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;基本介绍&quot;&gt;&lt;a href=&quot;#基本介绍&quot; class=&quot;headerlink&quot; title=&quot;基本介绍&quot;&gt;&lt;/a&gt;基本介绍&lt;/h1&gt;&lt;h3 id=&quot;1-web-标准&quot;&gt;&lt;a href=&quot;#1-web-标准&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="web前端学习" scheme="http://yoursite.com/categories/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python基础语法</title>
+    <link href="http://yoursite.com/2019/12/21/day2-python-ji-chu-yu-fa-he-pycharm-ji-ben-kuai-jie-jian-jin-zhi-bu-ma/"/>
+    <id>http://yoursite.com/2019/12/21/day2-python-ji-chu-yu-fa-he-pycharm-ji-ben-kuai-jie-jian-jin-zhi-bu-ma/</id>
+    <published>2019-12-21T02:24:11.000Z</published>
+    <updated>2019-12-22T12:58:15.776Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Python-基础语法&quot;&gt;&lt;a href=&quot;#Python-基础语法&quot; class=&quot;headerlink&quot; title=&quot;Python 基础语法&quot;&gt;&lt;/a&gt;Python 基础语法&lt;/h1&gt;&lt;h2 id=&quot;1-打印&quot;&gt;&lt;a href=&quot;#1-打印&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python学习" scheme="http://yoursite.com/categories/python%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PIL的基本使用</title>
+    <link href="http://yoursite.com/2019/12/21/pil-de-shi-yong/"/>
+    <id>http://yoursite.com/2019/12/21/pil-de-shi-yong/</id>
+    <published>2019-12-21T02:16:11.000Z</published>
+    <updated>2019-12-22T12:59:04.539Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/lyrichu/p/9124504.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;PIL的使用&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from PIL import Image,
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python库" scheme="http://yoursite.com/categories/python%E5%BA%93/"/>
+    
+    
+      <category term="PIL" scheme="http://yoursite.com/tags/PIL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pygame简单说明</title>
+    <link href="http://yoursite.com/2019/12/21/pygame-self/"/>
+    <id>http://yoursite.com/2019/12/21/pygame-self/</id>
+    <published>2019-12-21T02:11:11.000Z</published>
+    <updated>2019-12-22T12:59:22.768Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;pygame简单说明&quot;&gt;&lt;a href=&quot;#pygame简单说明&quot; class=&quot;headerlink&quot; title=&quot;pygame简单说明&quot;&gt;&lt;/a&gt;pygame简单说明&lt;/h1&gt;&lt;h2 id=&quot;1-游戏最小循环&quot;&gt;&lt;a href=&quot;#1-游戏最小循环&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python库" scheme="http://yoursite.com/categories/python%E5%BA%93/"/>
+    
+    
+      <category term="pygame" scheme="http://yoursite.com/tags/pygame/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>turtle的基本使用</title>
+    <link href="http://yoursite.com/2019/12/21/turtle-de-ji-ben-shi-yong/"/>
+    <id>http://yoursite.com/2019/12/21/turtle-de-ji-ben-shi-yong/</id>
+    <published>2019-12-21T01:38:11.000Z</published>
+    <updated>2019-12-22T12:59:33.490Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;turtel的使用&quot;&gt;&lt;a href=&quot;#turtel的使用&quot; class=&quot;headerlink&quot; title=&quot;turtel的使用&quot;&gt;&lt;/a&gt;turtel的使用&lt;/h2&gt;&lt;h5 id=&quot;1-基本操作&quot;&gt;&lt;a href=&quot;#1-基本操作&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python库" scheme="http://yoursite.com/categories/python%E5%BA%93/"/>
+    
+    
+      <category term="turtle" scheme="http://yoursite.com/tags/turtle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown 教程</title>
+    <link href="http://yoursite.com/2019/12/20/markdown-yu-fa-jie-shao/"/>
+    <id>http://yoursite.com/2019/12/20/markdown-yu-fa-jie-shao/</id>
+    <published>2019-12-20T12:38:11.000Z</published>
+    <updated>2019-12-22T12:59:54.285Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Markdown-教程&quot;&gt;&lt;a href=&quot;#Markdown-教程&quot; class=&quot;headerlink&quot; title=&quot;Markdown 教程&quot;&gt;&lt;/a&gt;Markdown 教程&lt;/h1&gt;&lt;p&gt;轻量级标记语言&lt;/p&gt;
+&lt;h2 id=&quot;一、基础语法&quot;&gt;&lt;a href=&quot;#一、基础语法&quot; class=&quot;headerlink&quot; title=&quot;一、基础语法&quot;&gt;&lt;/a&gt;一、基础语法&lt;/h2&gt;&lt;h3 id=&quot;1-标题&quot;&gt;&lt;a href=&quot;#1-标题&quot; class=&quot;headerlink&quot; title=&quot;1. 标题&quot;&gt;&lt;/a&gt;1. 标题&lt;/h3&gt;
+    
+    </summary>
+    
+    
+      <category term="其他" scheme="http://yoursite.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+    
+  </entry>
+  
+</feed>
