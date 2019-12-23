@@ -5,12 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="SQL基础 1, Fhlsyol">
-    <meta name="description" content="SQL基础 1sql又叫结构化查询语言，分为三大类：DDL(数据定义语言)、DML(数据操作语言)、DCL(数据控制语言)
-
-DDL：
-create    (创建数据库和表)
-drop    (删除数据库和表)
-alter    (修改表)">
+    <meta name="description" content="数据库sql的基本语法知识--第一部分">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -416,56 +411,62 @@ revoke    (召回授权)</code></pre></li>
 <li><p><code>creat table 表名;</code></p>
 <p><code>creat table if not exists 表名(字段名1 类型名1 约束1, 字段名2 类型名2 约束2, ...);</code></p>
 <p>注意：</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 表名：开发者自己命名，见名知意，一般需要加前缀t_/tb_表示表</span>
+<pre class=" language-sql"><code class="language-sql">
+<span class="token comment" spellcheck="true">-- 表名：开发者自己命名，见名知意，一般需要加前缀t_/tb_表示表</span>
 
-</code></pre>
+<span class="token comment" spellcheck="true">-- 字段名：开发者自己命名，见名知意；</span>
+    <span class="token comment" spellcheck="true">-- 注意：字段一定要有一个字段来作为主键(可以表示唯一一条记录)；</span>
+    <span class="token comment" spellcheck="true">-- 主键不能为空，并且是唯一的，并且数据类型是整型</span>
+
+<span class="token comment" spellcheck="true">-- 类型名：必须是当前数据库支持的数据类型</span>
+    <span class="token comment" spellcheck="true">-- MySQL中常用的数据类型：</span>
+    <span class="token comment" spellcheck="true">-- int                (整型)</span>
+    <span class="token comment" spellcheck="true">-- float            (浮点型)</span>
+    <span class="token comment" spellcheck="true">-- varchar            (不定长字符串)</span>
+    <span class="token comment" spellcheck="true">-- text                (定长字符串)</span>
+    <span class="token comment" spellcheck="true">-- bit                (布尔)</span>
+    <span class="token comment" spellcheck="true">-- date/datetime    (日期和时间)</span>
+    <span class="token comment" spellcheck="true">-- ...</span>
+
+<span class="token comment" spellcheck="true">-- 约束：</span>
+    <span class="token comment" spellcheck="true">-- not null            (非空约束)</span>
+    <span class="token comment" spellcheck="true">-- unique            (唯一约束)</span>
+    <span class="token comment" spellcheck="true">-- default            (默认值约束)</span>
+    <span class="token comment" spellcheck="true">-- primary key        (主键约束)</span>
+    <span class="token comment" spellcheck="true">-- foreign            (外键约束)</span>
+    <span class="token comment" spellcheck="true">-- auto_increment    (自动增长)</span>
+    <span class="token comment" spellcheck="true">-- ...</span>
+    <span class="token comment" spellcheck="true">-- 约束可以没有，也可以有多个</span></code></pre>
 </li>
 </ul>
-<p>  – 字段名：开发者自己命名，见名知意；<br>      – 注意：字段一定要有一个字段来作为主键(可以表示唯一一条记录)；<br>      – 主键不能为空，并且是唯一的，并且数据类型是整型</p>
-<p>  – 类型名：必须是当前数据库支持的数据类型<br>      – MySQL中常用的数据类型：<br>      – int                (整型)<br>      – float            (浮点型)<br>      – varchar            (不定长字符串)<br>      – text                (定长字符串)<br>      – bit                (布尔)<br>      – date/datetime    (日期和时间)<br>      – …</p>
-<p>  – 约束：<br>      – not null            (非空约束)<br>      – unique            (唯一约束)<br>      – default            (默认值约束)<br>      – primary key        (主键约束)<br>      – foreign            (外键约束)<br>      – auto_increment    (自动增长)<br>      – …<br>      – 约束可以没有，也可以有多个</p>
-<pre><code>
-
-
-+ 栗子：
-
-    ```mysql
-    CREATE DATABASE if not EXISTS school DEFAULT charset utf8;
-    USE school;
-    CREATE TABLE IF NOT EXISTS tb_stuent
-    (
-    stuid INT PRIMARY KEY AUTO_INCREMENT,     -- 主键也可以如下设置
-    stuname VARCHAR(20) NOT NULL,
-    stubirth DATE,
-    stugender BIT DEFAULT 1,
-    stutel VARCHAR(11) UNIQUE,
-    -- PRIMARY KEY (stuid)    -- 设置主键的另外一种方式
-    );
-    ```
-
-
-
-##### 2）删除表
-
-`drop table if exists 表名;`
-
-删除指定表
-
-
-
-##### 3） 修改表
-
-+ 添加字段
-
-  `alter table 表名 add column 字段名 字段类型 字段约束;`
-
-  添加多个可以如下：
-
-  ```mysql
-  ALTER TABLE tb_stuent ADD COLUMN 
-  (stuaddr VARCHAR(200),
-  stutest INT
-  );</code></pre><ul>
+<ul>
+<li><p>栗子：</p>
+<pre class=" language-mysql"><code class="language-mysql">  CREATE DATABASE if not EXISTS school DEFAULT charset utf8;
+  USE school;
+  CREATE TABLE IF NOT EXISTS tb_stuent
+  (
+  stuid INT PRIMARY KEY AUTO_INCREMENT,     -- 主键也可以如下设置
+  stuname VARCHAR(20) NOT NULL,
+  stubirth DATE,
+  stugender BIT DEFAULT 1,
+  stutel VARCHAR(11) UNIQUE,
+  -- PRIMARY KEY (stuid)    -- 设置主键的另外一种方式
+  );</code></pre>
+</li>
+</ul>
+<h5 id="2）删除表"><a href="#2）删除表" class="headerlink" title="2）删除表"></a>2）删除表</h5><p><code>drop table if exists 表名;</code></p>
+<p>删除指定表</p>
+<h5 id="3）-修改表"><a href="#3）-修改表" class="headerlink" title="3） 修改表"></a>3） 修改表</h5><ul>
+<li><p>添加字段</p>
+<p><code>alter table 表名 add column 字段名 字段类型 字段约束;</code></p>
+<p>添加多个可以如下：</p>
+<pre class=" language-mysql"><code class="language-mysql">ALTER TABLE tb_stuent ADD COLUMN 
+(stuaddr VARCHAR(200),
+stutest INT
+);</code></pre>
+</li>
+</ul>
+<ul>
 <li><p>删除字段</p>
 <p><code>alter table 表名 drop column 字段名;</code></p>
 </li>
@@ -679,7 +680,7 @@ select * from 表名 where gender=1 order by birth;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com" rel="external nofollow noreferrer">Fhlsyol</a>
+                    <a href="http://fhlsyol.top" rel="external nofollow noreferrer">Fhlsyol</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -689,7 +690,7 @@ select * from 表名 where gender=1 order by birth;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2019/12/23/day34-sql1/">http://yoursite.com/2019/12/23/day34-sql1/</a>
+                    <a href="http://fhlsyol.top/2019/12/23/day34-sql1/">http://fhlsyol.top/2019/12/23/day34-sql1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -702,7 +703,7 @@ select * from 表名 where gender=1 order by birth;
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="http://yoursite.com" target="_blank">Fhlsyol</a>
+                    <a href="http://fhlsyol.top" target="_blank">Fhlsyol</a>
                     !
                 </span>
             </div>
@@ -907,12 +908,7 @@ select * from 表名 where gender=1 order by birth;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SQL基础 1sql又叫结构化查询语言，分为三大类：DDL(数据定义语言)、DML(数据操作语言)、DCL(数据控制语言)
-
-DDL：
-create    (创建数据库和表)
-drop    (删除数据库和表)
-alter    (修改表)
+                            数据库sql的基本语法知识--第一部分
                         
                     </div>
                     <div class="publish-info">
@@ -950,7 +946,7 @@ alter    (修改表)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/21/day21-web-qian-duan-ji-chu/">
+                <a href="/2019/12/01/day21-web-qian-duan-ji-chu/">
                     <div class="card-image">
                         
                         <img src="https://s2.ax1x.com/2019/12/21/QjwxfS.jpg" class="responsive-img" alt="web前端基础">
@@ -961,30 +957,12 @@ alter    (修改表)
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基本介绍1. web 标准web标准是万维网指定的网页开发标准，主要包含三类：
-
-
-
-标准
-说明
-
-
-
-结构标准
-html(决定网页中的内容)
-
-
-表现标志
-CSS(决定网页中内容的布局和样式)
-
-
-行为标准
-JavaScript(决定网页
+                            web前端的基础知识介绍
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-01
                             </span>
                         <span class="publish-author">
                             
@@ -1147,13 +1125,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
             <font>Fhlsyol</font>
-            <!-- <a href="http://yoursite.com" target="_blank">Fhlsyol</a> -->
+            <!-- <a href="http://fhlsyol.top" target="_blank">Fhlsyol</a> -->
             <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> -->
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.1k</span>&nbsp;字
+                class="white-color">16.4k</span>&nbsp;字
             
             <!-- 
             
