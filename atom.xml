@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-22T12:58:19.737Z</updated>
+  <updated>2019-12-23T09:30:41.370Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL基础 1</title>
+    <link href="http://yoursite.com/2019/12/23/day34-sql1/"/>
+    <id>http://yoursite.com/2019/12/23/day34-sql1/</id>
+    <published>2019-12-23T09:26:11.000Z</published>
+    <updated>2019-12-23T09:30:41.370Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SQL基础-1&quot;&gt;&lt;a href=&quot;#SQL基础-1&quot; class=&quot;headerlink&quot; title=&quot;SQL基础 1&quot;&gt;&lt;/a&gt;SQL基础
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库学习" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="SQL" scheme="http://yoursite.com/tags/SQL/"/>
+    
+  </entry>
   
   <entry>
     <title>web前端基础</title>
