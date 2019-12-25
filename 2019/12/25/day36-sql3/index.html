@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="PIL的基本使用, Fhlsyol">
-    <meta name="description" content="Python库PIL的基础使用介绍，主要用于图片处理，文中简单介绍了几个方法">
+    <meta name="keywords" content="SQL基础 3, Fhlsyol">
+    <meta name="description" content="数据库sql的基本语法知识--第三部分">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>PIL的基本使用 | Fhlsyol</title>
+    <title>SQL基础 3 | Fhlsyol</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -175,12 +175,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s2.ax1x.com/2019/12/21/QjMGJx.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s2.ax1x.com/2019/12/23/lpsB7D.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">PIL的基本使用</h1>
+                    <h1 class="description center-align post-title">SQL基础 3</h1>
                 </div>
             </div>
         </div>
@@ -297,8 +297,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/PIL/" target="_blank">
-                                <span class="chip bg-color">PIL</span>
+                            <a href="/tags/SQL/" target="_blank">
+                                <span class="chip bg-color">SQL</span>
                             </a>
                         
                     </div>
@@ -309,8 +309,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python%E5%BA%93/" class="post-category" target="_blank">
-                                python库
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/" class="post-category" target="_blank">
+                                数据库学习
                             </a>
                         
                     </div>
@@ -322,7 +322,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-02
+                    2019-12-25
                 </div>
                 
 
@@ -331,14 +331,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    358
+                    809
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 				
@@ -354,40 +354,64 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="https://www.cnblogs.com/lyrichu/p/9124504.html" target="_blank" rel="noopener">PIL的使用</a></p>
-<pre><code>from PIL import Image, ImageFilter, ImageDraw</code></pre><h5 id="1-加载图片"><a href="#1-加载图片" class="headerlink" title="1.加载图片"></a>1.加载图片</h5><pre><code>图片对象 = Image.open(图片地址)</code></pre><h5 id="2-使用滤镜"><a href="#2-使用滤镜" class="headerlink" title="2.使用滤镜"></a>2.使用滤镜</h5><pre class=" language-python"><code class="language-python">image1<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>滤镜效果<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">"""
-滤镜效果:
-ImageFilter.EMBOSS   -  浮雕效果
-ImageFilter.FIND_EDGES - 泼墨效果
-ImageFilter.SHARPEN  -  锐化滤波
-ImageFilter.SMOOTH  -  平滑滤波
-ImageFilter.EDGE_ENHANCE_MORE - 边界增强滤波（程度更深）
-ImageFilter.EDGE_ENHANCE - 边界增强滤波
-ImageFilter.DETAIL - 细节滤波
-ImageFilter.CONTOUR - 轮廓滤波(铅笔画)
-ImageFilter.BLUR - 模糊滤波
-"""</span></code></pre>
-<h5 id="3-图片的剪切"><a href="#3-图片的剪切" class="headerlink" title="3.图片的剪切"></a>3.图片的剪切</h5><pre class=" language-python"><code class="language-python">图片对象<span class="token punctuation">.</span>crop<span class="token punctuation">(</span>范围<span class="token punctuation">)</span>
-范围<span class="token punctuation">:</span> <span class="token punctuation">(</span>起点x坐标<span class="token punctuation">,</span>起点y坐标<span class="token punctuation">,</span> 终点x坐标，终点y坐标<span class="token punctuation">)</span></code></pre>
-<h5 id="4-粘贴"><a href="#4-粘贴" class="headerlink" title="4.粘贴"></a>4.粘贴</h5><pre><code>图片对象1.paste(图片对象2,(x坐标，y坐标))</code></pre><h5 id="5-镜像"><a href="#5-镜像" class="headerlink" title="5.镜像"></a>5.镜像</h5><pre class=" language-python"><code class="language-python">图片对象<span class="token punctuation">.</span>transpose<span class="token punctuation">(</span>对称方式<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># Image.FLIP_LEFT_RIGHT - 左右镜像</span>
-<span class="token comment" spellcheck="true"># Image.FLIP_TOP_BOTTOM - 上下镜像</span></code></pre>
-<h5 id="6-缩放"><a href="#6-缩放" class="headerlink" title="6.缩放"></a>6.缩放</h5><pre><code>图片对象.thumbnail((宽度, 高度))  - 自动按比例缩放</code></pre><h5 id="7-创建空白图片"><a href="#7-创建空白图片" class="headerlink" title="7.创建空白图片"></a>7.创建空白图片</h5><pre class=" language-python"><code class="language-python">Image<span class="token punctuation">.</span>new<span class="token punctuation">(</span>模式<span class="token punctuation">,</span>图片大小<span class="token punctuation">,</span> 背景颜色<span class="token punctuation">)</span>
-empty <span class="token operator">=</span> Image<span class="token punctuation">.</span>new<span class="token punctuation">(</span><span class="token string">'RGB'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<h5 id="8-文字水印"><a href="#8-文字水印" class="headerlink" title="8.文字水印"></a>8.文字水印</h5><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1.创建一个空的图片</span>
-Image<span class="token punctuation">,</span>new<span class="token punctuation">(</span>模式<span class="token punctuation">,</span>图片大小<span class="token punctuation">,</span>背景颜色<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 2.创建font对象</span>
-ImageFont<span class="token punctuation">.</span>truetype<span class="token punctuation">(</span>字体文件<span class="token punctuation">,</span>字体大小<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 3.创建draw对象</span>
-ImageDraw<span class="token punctuation">.</span>Draw<span class="token punctuation">(</span>图片对象<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 4.画文字</span>
-draw<span class="token punctuation">.</span>text<span class="token punctuation">(</span>坐标<span class="token punctuation">,</span>文字<span class="token punctuation">,</span>字体对象<span class="token punctuation">,</span>文字颜色<span class="token punctuation">)</span></code></pre>
-<h5 id="9-颜色块"><a href="#9-颜色块" class="headerlink" title="9.颜色块"></a>9.颜色块</h5><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1.创建一个图片对象(可以是空图片，也可以是已经存在的图片)</span>
-<span class="token comment" spellcheck="true"># 2.创建Draw对象</span>
-ImageDraw<span class="token punctuation">.</span>Draw<span class="token punctuation">(</span>图片对象<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 3.设置点颜色</span>
-Draw对象<span class="token punctuation">.</span>point<span class="token punctuation">(</span>坐标<span class="token punctuation">,</span>颜色<span class="token punctuation">)</span></code></pre>
+                <h1 id="SQL3"><a href="#SQL3" class="headerlink" title="SQL3"></a>SQL3</h1><h2 id="一、内连接和外连接"><a href="#一、内连接和外连接" class="headerlink" title="一、内连接和外连接"></a>一、内连接和外连接</h2><h3 id="1-内连接"><a href="#1-内连接" class="headerlink" title="1. 内连接"></a>1. 内连接</h3><p>之前的查询其实就是内连接，内连接有两种写法：</p>
+<pre class=" language-mysql"><code class="language-mysql">select * from 表1, 表2, 表3, ... where 连接条件 查询条件;
+
+select * from 表1 inner join 表2 on 表2的连接条件 inner join 表3 on 表3的连接条件 ... where 查询条件
+
+-- 注意：
+    -- 如果不写连接条件，最后会形成笛卡尔积现象
+    -- 方法二中，中间表必须放在最前面</code></pre>
+<h3 id="2-外连接"><a href="#2-外连接" class="headerlink" title="2. 外连接"></a>2. 外连接</h3><p>在MySQL中，外连接只支持左外连接 <code>left foin</code> 和右外连接 <code>right join</code> </p>
+<pre class=" language-mysql"><code class="language-mysql">表1 left join 表2 on 连接条件
+-- 先将表1的记录全部取出来，按连接条件去依次连接表2中的记录，表1中不满足连接条件的记录会保留，但连接记录会为空；表2中不满足的不会获取到
+-- 先表1，再表2，表1全，表2连
+
+表1 right join 表2 on 连接条件
+-- 先表2，再表1，表2全，表1连，原理同上</code></pre>
+<h2 id="二、DCL-数据控制语言"><a href="#二、DCL-数据控制语言" class="headerlink" title="二、DCL (数据控制语言)"></a>二、DCL (数据控制语言)</h2><p>DCL主要提供授权和召回授权以及事务等相关功能</p>
+<h3 id="1-用户管理"><a href="#1-用户管理" class="headerlink" title="1. 用户管理"></a>1. 用户管理</h3><p>一般root账户才有的权限</p>
+<h5 id="1）创建用户"><a href="#1）创建用户" class="headerlink" title="1）创建用户"></a>1）创建用户</h5><pre class=" language-mysql"><code class="language-mysql">create user 用户名@登录地址;
+-- 创建指定的数据库用户，该用户登录时不需要登录密码
+-- 说明：
+    -- 登录地址：ip地址/localhost(本机)/%(任意位置)
+
+create user 用户名@登录地址 identified by '密码';</code></pre>
+<h5 id="2）删除用户"><a href="#2）删除用户" class="headerlink" title="2）删除用户"></a>2）删除用户</h5><p><code>drop user 用户名@登录地址</code></p>
+<h3 id="2-授权管理"><a href="#2-授权管理" class="headerlink" title="2. 授权管理"></a>2. 授权管理</h3><h5 id="1）授权"><a href="#1）授权" class="headerlink" title="1）授权"></a>1）授权</h5><p><code>grant 权限类型 on 数据库.表 to 用户名</code></p>
+<pre class=" language-mysql"><code class="language-mysql">-- 权限类型：
+    -- insert
+    -- delete
+    -- update
+    -- select
+    -- create
+    -- drop
+    -- ...
+    -- all privileges (所有权限)</code></pre>
+<pre class=" language-mysql"><code class="language-mysql">grant select, update on school.tb_stusent to user1</code></pre>
+<h5 id="2）召回授权"><a href="#2）召回授权" class="headerlink" title="2）召回授权"></a>2）召回授权</h5><p><code>revoke 权限类型 on 数据库.表 from 用户名@登录地址;</code></p>
+<p><code>revoke select, update on school.tb_stusent from user1@localhost</code></p>
+<h3 id="3-事务"><a href="#3-事务" class="headerlink" title="3. 事务"></a>3. 事务</h3><p>如果完成一个任务需要多个操作，但是要求多个操作中只要有一个失败，那么整个任务取消，让数据回到任我开始前的状态；</p>
+<p>只有所有的操作都成功了，数据库才更新，这个时候就用事务</p>
+<pre class=" language-mysql"><code class="language-mysql">begin;        -- 开启事务环境
+事务代码
+commit;        -- 提交事务环境中的操作结果
+rollback;    -- 回滚 (失败后数据恢复)</code></pre>
+<h3 id="4-视图"><a href="#4-视图" class="headerlink" title="4. 视图"></a>4. 视图</h3><p>视图使用来存储一个sql查询语句的结果。相当于给查询语句的结果创建一张临时表，但是这个临时表不占物理内存。</p>
+<p><img src="day36_SQL3.assets/Snipaste_2019-12-25_14-23-00.png" alt=""></p>
+<h3 id="4-索引"><a href="#4-索引" class="headerlink" title="4. 索引"></a>4. 索引</h3><p>索引就像书的目录，记录了书的位置，可以提高查询速度。(空间换时间)</p>
+<ul>
+<li>索引会占用额外的空间</li>
+<li>索引会让增删改变得更慢</li>
+</ul>
+<p>一般需要给使用频率最高的字段添加索引。(主键自带索引 - 唯一索引)</p>
+<h5 id="1）添加索引"><a href="#1）添加索引" class="headerlink" title="1）添加索引"></a>1）添加索引</h5><p>给指定字段添加普通索引：</p>
+<p><code>creat index 索引名 on 表名 (字段)</code></p>
+<p>给指定字段添加唯一索引：</p>
+<p><code>creat unique index 索引名 on 表名 (字段)</code></p>
+<p>注意：字段值唯一的时候才能添加唯一索引！</p>
+<h5 id="2）删除索引"><a href="#2）删除索引" class="headerlink" title="2）删除索引"></a>2）删除索引</h5><p><code>alter table 表名 drop index 索引名;</code></p>
+<p>ps：<code>explain sql查询语句</code> 看查询的执行计划，可以用来看查询的效率</p>
 
             </div>
             <hr/>
@@ -413,7 +437,7 @@ Draw对象<span class="token punctuation">.</span>point<span class="token punctu
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fhlsyol.top/2019/11/02/pil-de-shi-yong/">http://fhlsyol.top/2019/11/02/pil-de-shi-yong/</a>
+                    <a href="http://fhlsyol.top/2019/12/25/day36-sql3/">http://fhlsyol.top/2019/12/25/day36-sql3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -451,8 +475,8 @@ Draw对象<span class="token punctuation">.</span>point<span class="token punctu
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/PIL/" target="_blank">
-                                    <span class="chip bg-color">PIL</span>
+                                <a href="/tags/SQL/" target="_blank">
+                                    <span class="chip bg-color">SQL</span>
                                 </a>
                             
                         </div>
@@ -619,30 +643,30 @@ Draw对象<span class="token punctuation">.</span>point<span class="token punctu
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a target="_blank"href="/2019/11/03/pygame-self/">
+                <a target="_blank"href="/2019/12/25/readme/">
                     <div class="card-image">
                         
-                        <img src="https://s2.ax1x.com/2019/12/21/QjKxRf.png" class="responsive-img" alt="pygame简单说明">
+                        <img src="https://s2.ax1x.com/2019/12/26/lkmT8e.jpg" class="responsive-img" alt="关于本站">
                         
-                        <span class="card-title">pygame简单说明</span>
+                        <span class="card-title">关于本站</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python库pygame的简单介绍，主要用于开发简单的2d小游戏，常用于少儿编程
+                            欢迎大家来到我的博客！！！
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-03
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-25
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a target="_blank"href="/categories/python%E5%BA%93/" class="post-category">
-                                    python库
+                            <a target="_blank"href="/categories/%E6%AC%A2%E8%BF%8E/" class="post-category">
+                                    欢迎
                                 </a>
                             
                             
@@ -652,8 +676,8 @@ Draw对象<span class="token punctuation">.</span>point<span class="token punctu
                 
                 <div class="card-action article-tags">
                     
-                    <a target="_blank"href="/tags/pygame/">
-                        <span class="chip bg-color">pygame</span>
+                    <a target="_blank"href="/tags/%E6%AC%A2%E8%BF%8E/">
+                        <span class="chip bg-color">欢迎</span>
                     </a>
                     
                 </div>
@@ -667,30 +691,30 @@ Draw对象<span class="token punctuation">.</span>point<span class="token punctu
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a target="_blank"href="/2019/11/01/turtle-de-ji-ben-shi-yong/">
+                <a target="_blank"href="/2019/12/24/day35-sql2/">
                     <div class="card-image">
                         
-                        <img src="https://s2.ax1x.com/2019/12/21/QjK7se.jpg" class="responsive-img" alt="turtle的基本使用">
+                        <img src="https://s2.ax1x.com/2019/12/23/lpsB7D.jpg" class="responsive-img" alt="SQL基础 2">
                         
-                        <span class="card-title">turtle的基本使用</span>
+                        <span class="card-title">SQL基础 2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python库turtle的简单介绍，主要用于画简单图形，一般作为学习python语言的预热
+                            数据库sql的基本语法知识--第二部分
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a target="_blank"href="/categories/python%E5%BA%93/" class="post-category">
-                                    python库
+                            <a target="_blank"href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    数据库学习
                                 </a>
                             
                             
@@ -700,8 +724,8 @@ Draw对象<span class="token punctuation">.</span>point<span class="token punctu
                 
                 <div class="card-action article-tags">
                     
-                    <a target="_blank"href="/tags/turtle/">
-                        <span class="chip bg-color">turtle</span>
+                    <a target="_blank"href="/tags/SQL/">
+                        <span class="chip bg-color">SQL</span>
                     </a>
                     
                 </div>

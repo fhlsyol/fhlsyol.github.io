@@ -780,7 +780,7 @@ header .go-back i {
     top: 0;
     content: "";
     background-color: rgba(0, 0, 0, .3);
-    border-radius: 10px;
+    border-radius: 40px;
 }
 
 .recommend .post-card {
@@ -792,7 +792,7 @@ header .go-back i {
     margin-top: 15px;
     text-align: center;
     border: 0;
-    border-radius: 10px;
+    border-radius: 40px;
     color: rgba(0, 0, 0, .87);
     background: #fff 50%;
     background-size: cover;
@@ -890,7 +890,7 @@ article a:hover {
 }
 
 article .card {
-    border-radius: 8px;
+    border-radius: 40px;
     overflow: hidden;
 }
 
