@@ -27,7 +27,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.1.1"><link rel="alternate" href="/atom.xml" title="Fhlsyol" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -355,48 +356,48 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="SQL3"><a href="#SQL3" class="headerlink" title="SQL3"></a>SQL3</h1><h2 id="一、内连接和外连接"><a href="#一、内连接和外连接" class="headerlink" title="一、内连接和外连接"></a>一、内连接和外连接</h2><h3 id="1-内连接"><a href="#1-内连接" class="headerlink" title="1. 内连接"></a>1. 内连接</h3><p>之前的查询其实就是内连接，内连接有两种写法：</p>
-<pre class=" language-mysql"><code class="language-mysql">select * from 表1, 表2, 表3, ... where 连接条件 查询条件;
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表<span class="token number">1</span><span class="token punctuation">,</span> 表<span class="token number">2</span><span class="token punctuation">,</span> 表<span class="token number">3</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">where</span> 连接条件 查询条件<span class="token punctuation">;</span>
 
-select * from 表1 inner join 表2 on 表2的连接条件 inner join 表3 on 表3的连接条件 ... where 查询条件
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表<span class="token number">1</span> <span class="token keyword">inner</span> <span class="token keyword">join</span> 表<span class="token number">2</span> <span class="token keyword">on</span> 表<span class="token number">2</span>的连接条件 <span class="token keyword">inner</span> <span class="token keyword">join</span> 表<span class="token number">3</span> <span class="token keyword">on</span> 表<span class="token number">3</span>的连接条件 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">where</span> 查询条件
 
--- 注意：
-    -- 如果不写连接条件，最后会形成笛卡尔积现象
-    -- 方法二中，中间表必须放在最前面</code></pre>
+<span class="token comment" spellcheck="true">-- 注意：</span>
+    <span class="token comment" spellcheck="true">-- 如果不写连接条件，最后会形成笛卡尔积现象</span>
+    <span class="token comment" spellcheck="true">-- 方法二中，中间表必须放在最前面</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-外连接"><a href="#2-外连接" class="headerlink" title="2. 外连接"></a>2. 外连接</h3><p>在MySQL中，外连接只支持左外连接 <code>left foin</code> 和右外连接 <code>right join</code> </p>
-<pre class=" language-mysql"><code class="language-mysql">表1 left join 表2 on 连接条件
--- 先将表1的记录全部取出来，按连接条件去依次连接表2中的记录，表1中不满足连接条件的记录会保留，但连接记录会为空；表2中不满足的不会获取到
--- 先表1，再表2，表1全，表2连
+<pre class="line-numbers language-sql"><code class="language-sql">表<span class="token number">1</span> <span class="token keyword">left</span> <span class="token keyword">join</span> 表<span class="token number">2</span> <span class="token keyword">on</span> 连接条件
+<span class="token comment" spellcheck="true">-- 先将表1的记录全部取出来，按连接条件去依次连接表2中的记录，表1中不满足连接条件的记录会保留，但连接记录会为空；表2中不满足的不会获取到</span>
+<span class="token comment" spellcheck="true">-- 先表1，再表2，表1全，表2连</span>
 
-表1 right join 表2 on 连接条件
--- 先表2，再表1，表2全，表1连，原理同上</code></pre>
+表<span class="token number">1</span> <span class="token keyword">right</span> <span class="token keyword">join</span> 表<span class="token number">2</span> <span class="token keyword">on</span> 连接条件
+<span class="token comment" spellcheck="true">-- 先表2，再表1，表2全，表1连，原理同上</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二、DCL-数据控制语言"><a href="#二、DCL-数据控制语言" class="headerlink" title="二、DCL (数据控制语言)"></a>二、DCL (数据控制语言)</h2><p>DCL主要提供授权和召回授权以及事务等相关功能</p>
 <h3 id="1-用户管理"><a href="#1-用户管理" class="headerlink" title="1. 用户管理"></a>1. 用户管理</h3><p>一般root账户才有的权限</p>
-<h5 id="1）创建用户"><a href="#1）创建用户" class="headerlink" title="1）创建用户"></a>1）创建用户</h5><pre class=" language-mysql"><code class="language-mysql">create user 用户名@登录地址;
--- 创建指定的数据库用户，该用户登录时不需要登录密码
--- 说明：
-    -- 登录地址：ip地址/localhost(本机)/%(任意位置)
+<h5 id="1）创建用户"><a href="#1）创建用户" class="headerlink" title="1）创建用户"></a>1）创建用户</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">user</span> 用户名@登录地址<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 创建指定的数据库用户，该用户登录时不需要登录密码</span>
+<span class="token comment" spellcheck="true">-- 说明：</span>
+    <span class="token comment" spellcheck="true">-- 登录地址：ip地址/localhost(本机)/%(任意位置)</span>
 
-create user 用户名@登录地址 identified by '密码';</code></pre>
+<span class="token keyword">create</span> <span class="token keyword">user</span> 用户名@登录地址 identified <span class="token keyword">by</span> <span class="token string">'密码'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="2）删除用户"><a href="#2）删除用户" class="headerlink" title="2）删除用户"></a>2）删除用户</h5><p><code>drop user 用户名@登录地址</code></p>
 <h3 id="2-授权管理"><a href="#2-授权管理" class="headerlink" title="2. 授权管理"></a>2. 授权管理</h3><h5 id="1）授权"><a href="#1）授权" class="headerlink" title="1）授权"></a>1）授权</h5><p><code>grant 权限类型 on 数据库.表 to 用户名</code></p>
-<pre class=" language-mysql"><code class="language-mysql">-- 权限类型：
-    -- insert
-    -- delete
-    -- update
-    -- select
-    -- create
-    -- drop
-    -- ...
-    -- all privileges (所有权限)</code></pre>
-<pre class=" language-mysql"><code class="language-mysql">grant select, update on school.tb_stusent to user1</code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 权限类型：</span>
+    <span class="token comment" spellcheck="true">-- insert</span>
+    <span class="token comment" spellcheck="true">-- delete</span>
+    <span class="token comment" spellcheck="true">-- update</span>
+    <span class="token comment" spellcheck="true">-- select</span>
+    <span class="token comment" spellcheck="true">-- create</span>
+    <span class="token comment" spellcheck="true">-- drop</span>
+    <span class="token comment" spellcheck="true">-- ...</span>
+    <span class="token comment" spellcheck="true">-- all privileges (所有权限)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">grant</span> <span class="token keyword">select</span><span class="token punctuation">,</span> <span class="token keyword">update</span> <span class="token keyword">on</span> school<span class="token punctuation">.</span>tb_stusent <span class="token keyword">to</span> user1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h5 id="2）召回授权"><a href="#2）召回授权" class="headerlink" title="2）召回授权"></a>2）召回授权</h5><p><code>revoke 权限类型 on 数据库.表 from 用户名@登录地址;</code></p>
 <p><code>revoke select, update on school.tb_stusent from user1@localhost</code></p>
 <h3 id="3-事务"><a href="#3-事务" class="headerlink" title="3. 事务"></a>3. 事务</h3><p>如果完成一个任务需要多个操作，但是要求多个操作中只要有一个失败，那么整个任务取消，让数据回到任我开始前的状态；</p>
 <p>只有所有的操作都成功了，数据库才更新，这个时候就用事务</p>
-<pre class=" language-mysql"><code class="language-mysql">begin;        -- 开启事务环境
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">begin</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">-- 开启事务环境</span>
 事务代码
-commit;        -- 提交事务环境中的操作结果
-rollback;    -- 回滚 (失败后数据恢复)</code></pre>
+<span class="token keyword">commit</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">-- 提交事务环境中的操作结果</span>
+<span class="token keyword">rollback</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">-- 回滚 (失败后数据恢复)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="4-视图"><a href="#4-视图" class="headerlink" title="4. 视图"></a>4. 视图</h3><p>视图使用来存储一个sql查询语句的结果。相当于给查询语句的结果创建一张临时表，但是这个临时表不占物理内存。</p>
 <p><img src="day36_SQL3.assets/Snipaste_2019-12-25_14-23-00.png" alt=""></p>
 <h3 id="4-索引"><a href="#4-索引" class="headerlink" title="4. 索引"></a>4. 索引</h3><p>索引就像书的目录，记录了书的位置，可以提高查询速度。(空间换时间)</p>
@@ -876,7 +877,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">25.7k</span>&nbsp;字
+                class="white-color">26.1k</span>&nbsp;字
             
             <!-- 
             

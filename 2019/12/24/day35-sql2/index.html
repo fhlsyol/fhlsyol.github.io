@@ -27,7 +27,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.1.1"><link rel="alternate" href="/atom.xml" title="Fhlsyol" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -331,14 +332,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    3.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    14 分
                 </div>
                 
 				
@@ -380,15 +381,15 @@
 </ul>
 <h3 id="3-外键约束的添加和删除"><a href="#3-外键约束的添加和删除" class="headerlink" title="3. 外键约束的添加和删除"></a>3. 外键约束的添加和删除</h3><h5 id="1）创建表或者添加字段的时候直接在字段后面添加约束"><a href="#1）创建表或者添加字段的时候直接在字段后面添加约束" class="headerlink" title="1）创建表或者添加字段的时候直接在字段后面添加约束"></a>1）创建表或者添加字段的时候直接在字段后面添加约束</h5><p><img src="day35_SQL2.assets/Snipaste_2019-12-24_11-01-09.png" alt=""></p>
 <h5 id="2）通过修改表的表示添加和删除约束"><a href="#2）通过修改表的表示添加和删除约束" class="headerlink" title="2）通过修改表的表示添加和删除约束"></a>2）通过修改表的表示添加和删除约束</h5><p>先专门新建一列</p>
-<pre class=" language-mysql"><code class="language-mysql">-- 在学生表中新建一列用来保存学院归属
-alter table tb_stuent add column colid int comment '所在学院';</code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 在学生表中新建一列用来保存学院归属</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> tb_stuent <span class="token keyword">add</span> <span class="token keyword">column</span> colid <span class="token keyword">int</span> <span class="token keyword">comment</span> <span class="token string">'所在学院'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li><p>主键约束/唯一约束</p>
 <p>  添加：</p>
 <p>  <code>alter table 表名 add constraint 约束索引名 约束名(字段);</code></p>
 <p>  给指定字段添加指定约束(只能添加唯一约束和主键约束)</p>
 <p>  栗子：</p>
-<pre class=" language-mysql"><code class="language-mysql">  alter table tb_stuent add constraint unique_colid unique (colid);</code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql">  <span class="token keyword">alter</span> <span class="token keyword">table</span> tb_stuent <span class="token keyword">add</span> <span class="token keyword">constraint</span> unique_colid <span class="token keyword">unique</span> <span class="token punctuation">(</span>colid<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>  删除：</p>
 <p>  <code>alter table 表名 drop index 约束索引名;</code></p>
 <p>  删除指定索引的约束</p>
@@ -401,104 +402,103 @@ alter table tb_stuent add column colid int comment '所在学院';</code></pre>
 <p>给表1中的字段1添加外键约束，并且字段1的值依赖表2中的字段2</p>
 <p>注意：字段1和字段2不能同名！</p>
 <p>栗子：</p>
-<pre class=" language-mysql"><code class="language-mysql">alter table tb_student add constraint fk_collid_coll foreign key (colid) references tb_college (collid);</code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">table</span> tb_student <span class="token keyword">add</span> <span class="token keyword">constraint</span> fk_collid_coll <span class="token keyword">foreign</span> <span class="token keyword">key</span> <span class="token punctuation">(</span>colid<span class="token punctuation">)</span> <span class="token keyword">references</span> tb_college <span class="token punctuation">(</span>collid<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>删除：</p>
 <p><code>alter table tb_student drop foreign key fk_collid_coll;</code></p>
 </li>
 </ul>
 <p>栗子：</p>
-<pre class=" language-mysql"><code class="language-mysql">-- 给学生添加所在学院的外键约束
-ALTER TABLE tb_student ADD COLUMN colid INT COMMENT '所在学院';
-ALTER TABLE tb_student ADD CONSTRAINT fk_collid_stu FOREIGN KEY (colid) REFERENCES tb_college (collid);
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 给学生添加所在学院的外键约束</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tb_student <span class="token keyword">ADD</span> <span class="token keyword">COLUMN</span> colid <span class="token keyword">INT</span> <span class="token keyword">COMMENT</span> <span class="token string">'所在学院'</span><span class="token punctuation">;</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tb_student <span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> fk_collid_stu <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>colid<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> tb_college <span class="token punctuation">(</span>collid<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
--- 给老师添加所在学院的外键约束
-ALTER TABLE tb_teacher ADD COLUMN cid INT COMMENT '所在学院';
-ALTER TABLE tb_teacher ADD CONSTRAINT fk_cid_tea FOREIGN KEY (cid) REFERENCES tb_college (collid);
+<span class="token comment" spellcheck="true">-- 给老师添加所在学院的外键约束</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tb_teacher <span class="token keyword">ADD</span> <span class="token keyword">COLUMN</span> cid <span class="token keyword">INT</span> <span class="token keyword">COMMENT</span> <span class="token string">'所在学院'</span><span class="token punctuation">;</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tb_teacher <span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> fk_cid_tea <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>cid<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> tb_college <span class="token punctuation">(</span>collid<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
--- 给课程添加上课老师的外键约束
-ALTER TABLE tb_course ADD COLUMN tid INT COMMENT '上课老师';
-ALTER TABLE tb_course ADD CONSTRAINT fk_tid_cou FOREIGN KEY (tid) REFERENCES tb_teacher (teaid);</code></pre>
+<span class="token comment" spellcheck="true">-- 给课程添加上课老师的外键约束</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tb_course <span class="token keyword">ADD</span> <span class="token keyword">COLUMN</span> tid <span class="token keyword">INT</span> <span class="token keyword">COMMENT</span> <span class="token string">'上课老师'</span><span class="token punctuation">;</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tb_course <span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> fk_tid_cou <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>tid<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> tb_teacher <span class="token punctuation">(</span>teaid<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>结果：</p>
 <p><img src="day35_SQL2.assets/Snipaste_2019-12-24_11-29-48.png" alt=""></p>
 <ul>
 <li><p>多对多关系的外键约束</p>
 <p>多对多必须用第三张表来关联</p>
-<pre class=" language-mysql"><code class="language-mysql">-- 先新建一个表，新建的时候关联外键
-create table if not exists tb_record
-(
-reid int auto_increment comment '选课记录编号',
-sid int comment '学生的外键',
-cid int comment '课程外键',
-redate date comment '选课日期',
-score float comment '分数',
-primary key (reid),
-foreign key (sid) references tb_student (stuid),
-foreign key (cid) references tb_course (couid)
-);</code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 先新建一个表，新建的时候关联外键</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token keyword">exists</span> tb_record
+<span class="token punctuation">(</span>
+reid <span class="token keyword">int</span> <span class="token keyword">auto_increment</span> <span class="token keyword">comment</span> <span class="token string">'选课记录编号'</span><span class="token punctuation">,</span>
+sid <span class="token keyword">int</span> <span class="token keyword">comment</span> <span class="token string">'学生的外键'</span><span class="token punctuation">,</span>
+cid <span class="token keyword">int</span> <span class="token keyword">comment</span> <span class="token string">'课程外键'</span><span class="token punctuation">,</span>
+redate <span class="token keyword">date</span> <span class="token keyword">comment</span> <span class="token string">'选课日期'</span><span class="token punctuation">,</span>
+score <span class="token keyword">float</span> <span class="token keyword">comment</span> <span class="token string">'分数'</span><span class="token punctuation">,</span>
+<span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token punctuation">(</span>reid<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token keyword">foreign</span> <span class="token keyword">key</span> <span class="token punctuation">(</span>sid<span class="token punctuation">)</span> <span class="token keyword">references</span> tb_student <span class="token punctuation">(</span>stuid<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token keyword">foreign</span> <span class="token keyword">key</span> <span class="token punctuation">(</span>cid<span class="token punctuation">)</span> <span class="token keyword">references</span> tb_course <span class="token punctuation">(</span>couid<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
-<h3 id="4-高级查询"><a href="#4-高级查询" class="headerlink" title="4. 高级查询"></a>4. 高级查询</h3><h5 id="1）去重"><a href="#1）去重" class="headerlink" title="1）去重"></a>1）去重</h5><pre class=" language-mysql"><code class="language-mysql">select distinct 字段名 from 表名;  -- 获取指定字段的值并且去重
+<h3 id="4-高级查询"><a href="#4-高级查询" class="headerlink" title="4. 高级查询"></a>4. 高级查询</h3><h5 id="1）去重"><a href="#1）去重" class="headerlink" title="1）去重"></a>1）去重</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token keyword">distinct</span> 字段名 <span class="token keyword">from</span> 表名<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">-- 获取指定字段的值并且去重</span>
 
--- 栗子：
-select distinct stuage from t_student;</code></pre>
+<span class="token comment" spellcheck="true">-- 栗子：</span>
+<span class="token keyword">select</span> <span class="token keyword">distinct</span> stuage <span class="token keyword">from</span> t_student<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="2）限制和分页"><a href="#2）限制和分页" class="headerlink" title="2）限制和分页"></a>2）限制和分页</h5><p>限制：</p>
-<pre class=" language-mysql"><code class="language-mysql">select * from 表名 limit N;  -- 查询时只获取前N条的数据
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名 <span class="token keyword">limit</span> N<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">-- 查询时只获取前N条的数据</span>
 
--- 栗子：
-select * from tb_stuent limit 5;</code></pre>
+<span class="token comment" spellcheck="true">-- 栗子：</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> tb_stuent <span class="token keyword">limit</span> <span class="token number">5</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>分页(偏移)：</p>
-<pre class=" language-mysql"><code class="language-mysql">select * from 表名 limit N offset M;  -- 查询时跳过前M条数据，获取N条数据
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名 <span class="token keyword">limit</span> N <span class="token keyword">offset</span> M<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">-- 查询时跳过前M条数据，获取N条数据</span>
 
-select * from 表名 limit M,N;  -- 作用同上，第二种写法而已
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名 <span class="token keyword">limit</span> M<span class="token punctuation">,</span>N<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">-- 作用同上，第二种写法而已</span>
 
--- 栗子：
-select * from tb_stuent limit 5 offset 3;  -- 获取4到8条记录
+<span class="token comment" spellcheck="true">-- 栗子：</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> tb_stuent <span class="token keyword">limit</span> <span class="token number">5</span> <span class="token keyword">offset</span> <span class="token number">3</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">-- 获取4到8条记录</span>
 
-select * from tb_stuent order by score desc limit 3;  -- 获取全班成绩前三名的学生的信息</code></pre>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> tb_stuent <span class="token keyword">order</span> <span class="token keyword">by</span> score <span class="token keyword">desc</span> <span class="token keyword">limit</span> <span class="token number">3</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">-- 获取全班成绩前三名的学生的信息</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="3）聚合"><a href="#3）聚合" class="headerlink" title="3）聚合"></a>3）聚合</h5><p>MySQL中的一些函数：</p>
 <p><code>max()</code> <code>min()</code> <code>sum()</code> <code>avg()</code> <code>count()</code></p>
 <p>最大值，最小值，求和，求平均值，计数</p>
 <p>若数据中有空值，则不会计算在内 (比如说没有记录成绩的同学不会拉低全班平均分)</p>
-<pre class=" language-mysql"><code class="language-mysql">select max(score) as '最高分' from tb_record;  -- 获取record表中的最高分数
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">max</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'最高分'</span> <span class="token keyword">from</span> tb_record<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">-- 获取record表中的最高分数</span>
 
--- 其余函数用法同上</code></pre>
+<span class="token comment" spellcheck="true">-- 其余函数用法同上</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h5 id="4）分组"><a href="#4）分组" class="headerlink" title="4）分组"></a>4）分组</h5><p><code>select 聚合操作 from 表名 group by (字段);</code></p>
 <p>按指定字段的值对表进行分组，然后对每个分组进行聚合操作</p>
 <p>分组规则是指定字段值相同的作为一组</p>
 <p>注意：分组后，除了分组字段以外，其他字段只能聚合操作</p>
 <p>栗子：</p>
-<pre class=" language-mysql"><code class="language-mysql">select sid, avg(score) from tb_record group by (sid);  -- 获取每个学生的平均分
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> sid<span class="token punctuation">,</span> <span class="token function">avg</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">from</span> tb_record <span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token punctuation">(</span>sid<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">-- 获取每个学生的平均分</span>
 
-select cid, avg(score) from tb_record group by (cid);  -- 获取每个学科的平均分
+<span class="token keyword">select</span> cid<span class="token punctuation">,</span> <span class="token function">avg</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">from</span> tb_record <span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token punctuation">(</span>cid<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">-- 获取每个学科的平均分</span>
 
-select sid, count(cid) from tb_record group by (sid);  -- 获取每个学生选课的数量</code></pre>
+<span class="token keyword">select</span> sid<span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span>cid<span class="token punctuation">)</span> <span class="token keyword">from</span> tb_record <span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token punctuation">(</span>sid<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">-- 获取每个学生选课的数量</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>对分组后的数据加条件，不能用<code>where</code>，而是用<code>having</code></p>
 <p>栗子：</p>
-<pre class=" language-mysql"><code class="language-mysql">-- 获取选了两门课以上的学生的id (分组+聚合)
-select sid, count(cid) from tb_record group by (sid) having count(cid)>2;
--- 或者
-select sid, count(cid) as c_course from tb_record group by (sid) having c_course>2;</code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 获取选了两门课以上的学生的id (分组+聚合)</span>
+<span class="token keyword">select</span> sid<span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span>cid<span class="token punctuation">)</span> <span class="token keyword">from</span> tb_record <span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token punctuation">(</span>sid<span class="token punctuation">)</span> <span class="token keyword">having</span> <span class="token function">count</span><span class="token punctuation">(</span>cid<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 或者</span>
+<span class="token keyword">select</span> sid<span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span>cid<span class="token punctuation">)</span> <span class="token keyword">as</span> c_course <span class="token keyword">from</span> tb_record <span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token punctuation">(</span>sid<span class="token punctuation">)</span> <span class="token keyword">having</span> c_course<span class="token operator">></span><span class="token number">2</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="5）子查询："><a href="#5）子查询：" class="headerlink" title="5）子查询："></a>5）子查询：</h5><p>将一个查询的结果作为另外一个查询的条件或者查询对象</p>
 <ul>
 <li><p>第一种子查询：</p>
 <p>  将查询结果作为另外一个查询的条件</p>
 <p>  直接上栗子：</p>
-<pre class=" language-mysql"><code class="language-mysql">  -- 获取成绩最高的所有学生的id
-  -- 将select max(score) as '最高分' from tb_record;作为条件
-  select sid from tb_record where score=(select max(score) as '最高分' from tb_record);
+<pre class="line-numbers language-sql"><code class="language-sql">  <span class="token comment" spellcheck="true">-- 获取成绩最高的所有学生的id</span>
+  <span class="token comment" spellcheck="true">-- 将select max(score) as '最高分' from tb_record;作为条件</span>
+  <span class="token keyword">select</span> sid <span class="token keyword">from</span> tb_record <span class="token keyword">where</span> score<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token function">max</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'最高分'</span> <span class="token keyword">from</span> tb_record<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-</code></pre>
+  <span class="token comment" spellcheck="true">-- 获取选了两门课程以上的学生的姓名</span>
+  <span class="token keyword">select</span> stuname <span class="token keyword">from</span> tb_student <span class="token keyword">where</span> stuid <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token keyword">select</span> sid <span class="token keyword">from</span> tb_record <span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token punctuation">(</span>sid<span class="token punctuation">)</span> <span class="token keyword">having</span> <span class="token function">count</span><span class="token punctuation">(</span>cid<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
-<pre><code>-- 获取选了两门课程以上的学生的姓名
-select stuname from tb_student where stuid in (select sid from tb_record group by (sid) having count(cid)&gt;2);
-```</code></pre><ul>
+<ul>
 <li><p>第二种子查询：</p>
 <p>将一个查询的结果作为另一个查询的查询对象</p>
 <p>注意：必须重命名！！！</p>
 <p>直接上栗子：</p>
-<pre class=" language-mysql"><code class="language-mysql">-- 将一个查询的结果作为另一个查询的对象
-select stuname from (select * from tb_student limit 4, 5;) as t1;  -- 这里必须重命名！</code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 将一个查询的结果作为另一个查询的对象</span>
+<span class="token keyword">select</span> stuname <span class="token keyword">from</span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> tb_student <span class="token keyword">limit</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> t1<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">-- 这里必须重命名！</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <h5 id="6）-连接查询："><a href="#6）-连接查询：" class="headerlink" title="6） 连接查询："></a>6） 连接查询：</h5><p>又叫联表查询、联接查询等</p>
@@ -506,204 +506,204 @@ select stuname from (select * from tb_student limit 4, 5;) as t1;  -- 这里必�
 <p><code>select * from 表名1, 表名2, 表名3, ... 连接条件 查询条件;</code></p>
 <p>注意：如果既有连接条件，又有查询条件，查询条件必须放在连接条件的后面</p>
 <p>栗子：</p>
-<pre class=" language-mysql"><code class="language-mysql">-- 查询所有学生的名字和对应的学院名字：
-select stuname, collname from tb_student, tb_college;  -- 如果直接执行，会打印一个笛卡尔集，所以要添加连接条件，如下：
-select stuname, collname from tb_student, tb_college where tb_student.colid=tb_college.collid;
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 查询所有学生的名字和对应的学院名字：</span>
+<span class="token keyword">select</span> stuname<span class="token punctuation">,</span> collname <span class="token keyword">from</span> tb_student<span class="token punctuation">,</span> tb_college<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">-- 如果直接执行，会打印一个笛卡尔集，所以要添加连接条件，如下：</span>
+<span class="token keyword">select</span> stuname<span class="token punctuation">,</span> collname <span class="token keyword">from</span> tb_student<span class="token punctuation">,</span> tb_college <span class="token keyword">where</span> tb_student<span class="token punctuation">.</span>colid<span class="token operator">=</span>tb_college<span class="token punctuation">.</span>collid<span class="token punctuation">;</span>
 
--- 查询所有学生每个学科的成绩：xxx(学生) xxx(学科名) xx(分数)
-select stuname, couname, score from tb_student, tb_course, tb_record where tb_student.stuid=tb_record.sid and tb_course.couid=tb_record.cid;
+<span class="token comment" spellcheck="true">-- 查询所有学生每个学科的成绩：xxx(学生) xxx(学科名) xx(分数)</span>
+<span class="token keyword">select</span> stuname<span class="token punctuation">,</span> couname<span class="token punctuation">,</span> score <span class="token keyword">from</span> tb_student<span class="token punctuation">,</span> tb_course<span class="token punctuation">,</span> tb_record <span class="token keyword">where</span> tb_student<span class="token punctuation">.</span>stuid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>sid <span class="token operator">and</span> tb_course<span class="token punctuation">.</span>couid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>cid<span class="token punctuation">;</span>
 
--- 查询所有大于70分的学生的学科成绩：
-select stuname, couname, score from tb_student, tb_course, tb_record where tb_student.stuid=tb_record.sid and tb_course.couid=tb_record.cid and score>70;</code></pre>
+<span class="token comment" spellcheck="true">-- 查询所有大于70分的学生的学科成绩：</span>
+<span class="token keyword">select</span> stuname<span class="token punctuation">,</span> couname<span class="token punctuation">,</span> score <span class="token keyword">from</span> tb_student<span class="token punctuation">,</span> tb_course<span class="token punctuation">,</span> tb_record <span class="token keyword">where</span> tb_student<span class="token punctuation">.</span>stuid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>sid <span class="token operator">and</span> tb_course<span class="token punctuation">.</span>couid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>cid <span class="token operator">and</span> score<span class="token operator">></span><span class="token number">70</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="练习："><a href="#练习：" class="headerlink" title="练习："></a>练习：</h3><p>先上自己做的：</p>
-<pre class=" language-mysql"><code class="language-mysql">-- 查询所有学生信息
-SELECT * FROM tb_student;
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 查询所有学生信息</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> tb_student<span class="token punctuation">;</span>
 
--- 查询所有课程名称及学分
-SELECT couname, coucredit FROM tb_course;
+<span class="token comment" spellcheck="true">-- 查询所有课程名称及学分</span>
+<span class="token keyword">SELECT</span> couname<span class="token punctuation">,</span> coucredit <span class="token keyword">FROM</span> tb_course<span class="token punctuation">;</span>
 
--- 查询所有学生的姓名和性别
-SELECT stuname AS '姓名', IF(stusex, '男', '女') AS '性别' FROM tb_student;
+<span class="token comment" spellcheck="true">-- 查询所有学生的姓名和性别</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span> <span class="token keyword">IF</span><span class="token punctuation">(</span>stusex<span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'女'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'性别'</span> <span class="token keyword">FROM</span> tb_student<span class="token punctuation">;</span>
 
--- 查询所有女学生的姓名和出生日期
-SELECT stuname, stubirth FROM tb_student WHERE stusex=0;
+<span class="token comment" spellcheck="true">-- 查询所有女学生的姓名和出生日期</span>
+<span class="token keyword">SELECT</span> stuname<span class="token punctuation">,</span> stubirth <span class="token keyword">FROM</span> tb_student <span class="token keyword">WHERE</span> stusex<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
 
--- 查询所有80后学生的姓名、性别和出生日期
-SELECT stuname AS '姓名', IF(stusex, '男', '女') AS '性别', stubirth AS '生日' FROM tb_student WHERE stubirth>'1979-12-31';
+<span class="token comment" spellcheck="true">-- 查询所有80后学生的姓名、性别和出生日期</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span> <span class="token keyword">IF</span><span class="token punctuation">(</span>stusex<span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'女'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'性别'</span><span class="token punctuation">,</span> stubirth <span class="token keyword">AS</span> <span class="token string">'生日'</span> <span class="token keyword">FROM</span> tb_student <span class="token keyword">WHERE</span> stubirth<span class="token operator">></span><span class="token string">'1979-12-31'</span><span class="token punctuation">;</span>
 
--- 查询姓"杨"的学生姓名和性别
-SELECT stuname AS '姓名', IF(stusex, '男', '女') AS '性别' FROM tb_student WHERE stuname LIKE '杨%';
+<span class="token comment" spellcheck="true">-- 查询姓"杨"的学生姓名和性别</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span> <span class="token keyword">IF</span><span class="token punctuation">(</span>stusex<span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'女'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'性别'</span> <span class="token keyword">FROM</span> tb_student <span class="token keyword">WHERE</span> stuname <span class="token operator">LIKE</span> <span class="token string">'杨%'</span><span class="token punctuation">;</span>
 
--- 查询姓"杨"名字两个字的学生姓名和性别
-SELECT stuname AS '姓名', IF(stusex, '男', '女') AS '性别' FROM tb_student WHERE stuname LIKE '杨_';
+<span class="token comment" spellcheck="true">-- 查询姓"杨"名字两个字的学生姓名和性别</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span> <span class="token keyword">IF</span><span class="token punctuation">(</span>stusex<span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'女'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'性别'</span> <span class="token keyword">FROM</span> tb_student <span class="token keyword">WHERE</span> stuname <span class="token operator">LIKE</span> <span class="token string">'杨_'</span><span class="token punctuation">;</span>
 
--- 查询姓"杨"名字三个字的学生姓名和性别
-SELECT stuname AS '姓名', IF(stusex, '男', '女') AS '性别' FROM tb_student WHERE stuname LIKE '杨__';
+<span class="token comment" spellcheck="true">-- 查询姓"杨"名字三个字的学生姓名和性别</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span> <span class="token keyword">IF</span><span class="token punctuation">(</span>stusex<span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'女'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'性别'</span> <span class="token keyword">FROM</span> tb_student <span class="token keyword">WHERE</span> stuname <span class="token operator">LIKE</span> <span class="token string">'杨__'</span><span class="token punctuation">;</span>
 
--- 查询名字中有"不"字或"嫣"字的学生的姓名
-SELECT stuname AS '姓名' FROM tb_student WHERE stuname LIKE '%不%' OR stuname LIKE '%嫣%';
+<span class="token comment" spellcheck="true">-- 查询名字中有"不"字或"嫣"字的学生的姓名</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span> <span class="token keyword">FROM</span> tb_student <span class="token keyword">WHERE</span> stuname <span class="token operator">LIKE</span> <span class="token string">'%不%'</span> <span class="token operator">OR</span> stuname <span class="token operator">LIKE</span> <span class="token string">'%嫣%'</span><span class="token punctuation">;</span>
 
--- 查询没有录入家庭住址的学生姓名
-SELECT stuname AS '姓名' FROM tb_student WHERE stuaddr IS NULL;
+<span class="token comment" spellcheck="true">-- 查询没有录入家庭住址的学生姓名</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span> <span class="token keyword">FROM</span> tb_student <span class="token keyword">WHERE</span> stuaddr <span class="token operator">IS</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span>
 
--- 查询录入了家庭住址的学生姓名
-SELECT stuname AS '姓名' FROM tb_student WHERE stuaddr IS NOT NULL;
+<span class="token comment" spellcheck="true">-- 查询录入了家庭住址的学生姓名</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span> <span class="token keyword">FROM</span> tb_student <span class="token keyword">WHERE</span> stuaddr <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span>
 
--- 查询男学生的姓名和生日按年龄从大到小排列
-SELECT stuname AS '姓名', stubirth AS '生日' FROM tb_student WHERE stusex=1 ORDER BY stubirth;
+<span class="token comment" spellcheck="true">-- 查询男学生的姓名和生日按年龄从大到小排列</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span> stubirth <span class="token keyword">AS</span> <span class="token string">'生日'</span> <span class="token keyword">FROM</span> tb_student <span class="token keyword">WHERE</span> stusex<span class="token operator">=</span><span class="token number">1</span> <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> stubirth<span class="token punctuation">;</span>
 
--- 查询年龄最大的学生的出生日期
-SELECT MIN(stubirth) AS '年龄最大学生的生日'  FROM tb_student;
+<span class="token comment" spellcheck="true">-- 查询年龄最大的学生的出生日期</span>
+<span class="token keyword">SELECT</span> <span class="token function">MIN</span><span class="token punctuation">(</span>stubirth<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'年龄最大学生的生日'</span>  <span class="token keyword">FROM</span> tb_student<span class="token punctuation">;</span>
 
--- 查询年龄最小的学生的出生日期
-SELECT MAX(stubirth) AS '年龄最小学生的生日'  FROM tb_student;
+<span class="token comment" spellcheck="true">-- 查询年龄最小的学生的出生日期</span>
+<span class="token keyword">SELECT</span> <span class="token function">MAX</span><span class="token punctuation">(</span>stubirth<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'年龄最小学生的生日'</span>  <span class="token keyword">FROM</span> tb_student<span class="token punctuation">;</span>
 
--- 查询男女学生的人数
-SELECT COUNT(stuid) AS '人数', IF(stusex, '男', '女') AS '性别' FROM tb_student GROUP BY stusex;
+<span class="token comment" spellcheck="true">-- 查询男女学生的人数</span>
+<span class="token keyword">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>stuid<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'人数'</span><span class="token punctuation">,</span> <span class="token keyword">IF</span><span class="token punctuation">(</span>stusex<span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'女'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'性别'</span> <span class="token keyword">FROM</span> tb_student <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> stusex<span class="token punctuation">;</span>
 
--- 查询课程编号为1111的课程的平均成绩
-SELECT AVG(score) AS '1111课程平均成绩' FROM tb_record WHERE cid=1111;
+<span class="token comment" spellcheck="true">-- 查询课程编号为1111的课程的平均成绩</span>
+<span class="token keyword">SELECT</span> <span class="token function">AVG</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'1111课程平均成绩'</span> <span class="token keyword">FROM</span> tb_record <span class="token keyword">WHERE</span> cid<span class="token operator">=</span><span class="token number">1111</span><span class="token punctuation">;</span>
 
--- 查询学号为1001的学生所有课程的平均分
-SELECT AVG(score) AS '1001学生平均成绩' FROM tb_record WHERE sid=1001;
+<span class="token comment" spellcheck="true">-- 查询学号为1001的学生所有课程的平均分</span>
+<span class="token keyword">SELECT</span> <span class="token function">AVG</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'1001学生平均成绩'</span> <span class="token keyword">FROM</span> tb_record <span class="token keyword">WHERE</span> sid<span class="token operator">=</span><span class="token number">1001</span><span class="token punctuation">;</span>
 
--- 查询每个学生的学号和平均成绩
-SELECT sid AS '学号', AVG(score) AS '平均成绩' FROM tb_record GROUP BY sid;
+<span class="token comment" spellcheck="true">-- 查询每个学生的学号和平均成绩</span>
+<span class="token keyword">SELECT</span> sid <span class="token keyword">AS</span> <span class="token string">'学号'</span><span class="token punctuation">,</span> <span class="token function">AVG</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'平均成绩'</span> <span class="token keyword">FROM</span> tb_record <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> sid<span class="token punctuation">;</span>
 
--- 查询平均成绩大于等于90分的学生的学号和平均成绩
-SELECT sid AS '学号', AVG(score) AS '平均成绩' FROM tb_record GROUP BY sid HAVING AVG(score)>=90;
+<span class="token comment" spellcheck="true">-- 查询平均成绩大于等于90分的学生的学号和平均成绩</span>
+<span class="token keyword">SELECT</span> sid <span class="token keyword">AS</span> <span class="token string">'学号'</span><span class="token punctuation">,</span> <span class="token function">AVG</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'平均成绩'</span> <span class="token keyword">FROM</span> tb_record <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> sid <span class="token keyword">HAVING</span> <span class="token function">AVG</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span><span class="token operator">>=</span><span class="token number">90</span><span class="token punctuation">;</span>
 
--- 查询选了两门以上的课程的学生姓名
-SELECT stuname AS '姓名' FROM tb_student WHERE stuid in (SELECT sid FROM tb_record GROUP BY sid HAVING COUNT(cid)>2);
+<span class="token comment" spellcheck="true">-- 查询选了两门以上的课程的学生姓名</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span> <span class="token keyword">FROM</span> tb_student <span class="token keyword">WHERE</span> stuid <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> sid <span class="token keyword">FROM</span> tb_record <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> sid <span class="token keyword">HAVING</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>cid<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
--- 查询学生姓名、课程名称以及成绩
-SELECT stuname AS '姓名', couname AS '课程名称', score AS '成绩' FROM tb_student, tb_course, tb_record WHERE tb_student.stuid=tb_record.sid AND tb_course.couid=tb_record.cid;
+<span class="token comment" spellcheck="true">-- 查询学生姓名、课程名称以及成绩</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span> couname <span class="token keyword">AS</span> <span class="token string">'课程名称'</span><span class="token punctuation">,</span> score <span class="token keyword">AS</span> <span class="token string">'成绩'</span> <span class="token keyword">FROM</span> tb_student<span class="token punctuation">,</span> tb_course<span class="token punctuation">,</span> tb_record <span class="token keyword">WHERE</span> tb_student<span class="token punctuation">.</span>stuid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>sid <span class="token operator">AND</span> tb_course<span class="token punctuation">.</span>couid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>cid<span class="token punctuation">;</span>
 
--- 查询学生姓名、课程名称以及成绩按成绩从高到低查询第11-15条记录
-SELECT stuname AS '姓名', couname AS '课程名称', score AS '成绩' FROM tb_student, tb_course, tb_record WHERE tb_student.stuid=tb_record.sid AND tb_course.couid=tb_record.cid ORDER BY score DESC LIMIT 10,5;
+<span class="token comment" spellcheck="true">-- 查询学生姓名、课程名称以及成绩按成绩从高到低查询第11-15条记录</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span> couname <span class="token keyword">AS</span> <span class="token string">'课程名称'</span><span class="token punctuation">,</span> score <span class="token keyword">AS</span> <span class="token string">'成绩'</span> <span class="token keyword">FROM</span> tb_student<span class="token punctuation">,</span> tb_course<span class="token punctuation">,</span> tb_record <span class="token keyword">WHERE</span> tb_student<span class="token punctuation">.</span>stuid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>sid <span class="token operator">AND</span> tb_course<span class="token punctuation">.</span>couid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>cid <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> score <span class="token keyword">DESC</span> <span class="token keyword">LIMIT</span> <span class="token number">10</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">;</span>
 
--- 查询选课学生的姓名和平均成绩
-SELECT stuname AS '姓名', AVG(score) AS '平均成绩' FROM tb_student, tb_record WHERE tb_student.stuid=tb_record.sid GROUP BY stuid;
+<span class="token comment" spellcheck="true">-- 查询选课学生的姓名和平均成绩</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span> <span class="token function">AVG</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'平均成绩'</span> <span class="token keyword">FROM</span> tb_student<span class="token punctuation">,</span> tb_record <span class="token keyword">WHERE</span> tb_student<span class="token punctuation">.</span>stuid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>sid <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> stuid<span class="token punctuation">;</span>
 
--- 查询每个学生的姓名和选课数量
-SELECT stuname AS '姓名', COUNT(cid) AS '选课数量' FROM tb_student, tb_record WHERE tb_student.stuid=tb_record.sid GROUP BY stuid;</code></pre>
+<span class="token comment" spellcheck="true">-- 查询每个学生的姓名和选课数量</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">AS</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>cid<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'选课数量'</span> <span class="token keyword">FROM</span> tb_student<span class="token punctuation">,</span> tb_record <span class="token keyword">WHERE</span> tb_student<span class="token punctuation">.</span>stuid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>sid <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> stuid<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>老师答案：</p>
-<pre class=" language-mysql"><code class="language-mysql">-- 查询所有学生信息
-SELECT * from tb_student;
--- 查询所有课程名称及学分(映射)
-SELECT couname, coucredit FROM tb_course;
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 查询所有学生信息</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">from</span> tb_student<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 查询所有课程名称及学分(映射)</span>
+<span class="token keyword">SELECT</span> couname<span class="token punctuation">,</span> coucredit <span class="token keyword">FROM</span> tb_course<span class="token punctuation">;</span>
 
--- 查询所有学生的姓名和性别(映射)
-SELECT stuname, if(stusex,'男', '女') as gender FROM tb_student;
+<span class="token comment" spellcheck="true">-- 查询所有学生的姓名和性别(映射)</span>
+<span class="token keyword">SELECT</span> stuname<span class="token punctuation">,</span> <span class="token keyword">if</span><span class="token punctuation">(</span>stusex<span class="token punctuation">,</span><span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'女'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> gender <span class="token keyword">FROM</span> tb_student<span class="token punctuation">;</span>
 
--- 查询所有女学生的姓名和出生日期
-SELECT stuname, stubirth FROM tb_student where stusex=0;
+<span class="token comment" spellcheck="true">-- 查询所有女学生的姓名和出生日期</span>
+<span class="token keyword">SELECT</span> stuname<span class="token punctuation">,</span> stubirth <span class="token keyword">FROM</span> tb_student <span class="token keyword">where</span> stusex<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
 
--- 查询所有80后学生的姓名、性别和出生日期
-SELECT stuname, if(stusex, '男', '女') as gender, stubirth FROM tb_student 
-WHERE stubirth >= '1980-1-1' and stubirth <= '1989-12-31';
+<span class="token comment" spellcheck="true">-- 查询所有80后学生的姓名、性别和出生日期</span>
+<span class="token keyword">SELECT</span> stuname<span class="token punctuation">,</span> <span class="token keyword">if</span><span class="token punctuation">(</span>stusex<span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'女'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> gender<span class="token punctuation">,</span> stubirth <span class="token keyword">FROM</span> tb_student 
+<span class="token keyword">WHERE</span> stubirth <span class="token operator">>=</span> <span class="token string">'1980-1-1'</span> <span class="token operator">and</span> stubirth <span class="token operator">&lt;=</span> <span class="token string">'1989-12-31'</span><span class="token punctuation">;</span>
 
--- 查询姓"杨"的学生姓名和性别(模糊)
-SELECT stuname, if(stusex, '男', '女') as gender FROM tb_student where stuname like '杨%';
+<span class="token comment" spellcheck="true">-- 查询姓"杨"的学生姓名和性别(模糊)</span>
+<span class="token keyword">SELECT</span> stuname<span class="token punctuation">,</span> <span class="token keyword">if</span><span class="token punctuation">(</span>stusex<span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'女'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> gender <span class="token keyword">FROM</span> tb_student <span class="token keyword">where</span> stuname <span class="token operator">like</span> <span class="token string">'杨%'</span><span class="token punctuation">;</span>
 
--- 查询姓"杨"名字两个字的学生姓名和性别
-SELECT stuname, if(stusex, '男', '女') as gender FROM tb_student where stuname like '杨_';
+<span class="token comment" spellcheck="true">-- 查询姓"杨"名字两个字的学生姓名和性别</span>
+<span class="token keyword">SELECT</span> stuname<span class="token punctuation">,</span> <span class="token keyword">if</span><span class="token punctuation">(</span>stusex<span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'女'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> gender <span class="token keyword">FROM</span> tb_student <span class="token keyword">where</span> stuname <span class="token operator">like</span> <span class="token string">'杨_'</span><span class="token punctuation">;</span>
 
--- 查询姓"杨"名字三个字的学生姓名和性别
-SELECT stuname, if(stusex, '男', '女') as gender FROM tb_student where stuname like '杨__';
+<span class="token comment" spellcheck="true">-- 查询姓"杨"名字三个字的学生姓名和性别</span>
+<span class="token keyword">SELECT</span> stuname<span class="token punctuation">,</span> <span class="token keyword">if</span><span class="token punctuation">(</span>stusex<span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'女'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> gender <span class="token keyword">FROM</span> tb_student <span class="token keyword">where</span> stuname <span class="token operator">like</span> <span class="token string">'杨__'</span><span class="token punctuation">;</span>
 
--- 查询名字中有"不"字或"嫣"字的学生的姓名
-SELECT stuname FROM tb_student where stuname like '%不%' or stuname like '%嫣%';
+<span class="token comment" spellcheck="true">-- 查询名字中有"不"字或"嫣"字的学生的姓名</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">FROM</span> tb_student <span class="token keyword">where</span> stuname <span class="token operator">like</span> <span class="token string">'%不%'</span> <span class="token operator">or</span> stuname <span class="token operator">like</span> <span class="token string">'%嫣%'</span><span class="token punctuation">;</span>
 
--- 查询没有录入家庭住址的学生姓名
-SELECT stuname FROM tb_student WHERE stuaddr is NULL;
+<span class="token comment" spellcheck="true">-- 查询没有录入家庭住址的学生姓名</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">FROM</span> tb_student <span class="token keyword">WHERE</span> stuaddr <span class="token operator">is</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span>
 
--- 查询录入了家庭住址的学生姓名
-SELECT stuname FROM tb_student WHERE stuaddr is not NULL;
+<span class="token comment" spellcheck="true">-- 查询录入了家庭住址的学生姓名</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">FROM</span> tb_student <span class="token keyword">WHERE</span> stuaddr <span class="token operator">is</span> <span class="token operator">not</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span>
 
--- 查询学生选课的所有日期(去重)
-SELECT distinct redate FROM tb_record;
+<span class="token comment" spellcheck="true">-- 查询学生选课的所有日期(去重)</span>
+<span class="token keyword">SELECT</span> <span class="token keyword">distinct</span> redate <span class="token keyword">FROM</span> tb_record<span class="token punctuation">;</span>
 
--- 查询学生的家庭住址(去重)
-select distinct stuaddr FROM tb_student;
+<span class="token comment" spellcheck="true">-- 查询学生的家庭住址(去重)</span>
+<span class="token keyword">select</span> <span class="token keyword">distinct</span> stuaddr <span class="token keyword">FROM</span> tb_student<span class="token punctuation">;</span>
 
--- 查询男学生的姓名和生日按年龄从大到小排列(排序)
-SELECT stuname, stubirth FROM tb_student where stusex=1 ORDER BY stubirth;
+<span class="token comment" spellcheck="true">-- 查询男学生的姓名和生日按年龄从大到小排列(排序)</span>
+<span class="token keyword">SELECT</span> stuname<span class="token punctuation">,</span> stubirth <span class="token keyword">FROM</span> tb_student <span class="token keyword">where</span> stusex<span class="token operator">=</span><span class="token number">1</span> <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> stubirth<span class="token punctuation">;</span>
 
--- 查询年龄最大的学生的出生日期(聚合)
-SELECT min(stubirth) FROM tb_student;
+<span class="token comment" spellcheck="true">-- 查询年龄最大的学生的出生日期(聚合)</span>
+<span class="token keyword">SELECT</span> <span class="token function">min</span><span class="token punctuation">(</span>stubirth<span class="token punctuation">)</span> <span class="token keyword">FROM</span> tb_student<span class="token punctuation">;</span>
 
--- 查询年龄最小的学生的出生日期(聚合)
-SELECT max(stubirth) FROM tb_student;
+<span class="token comment" spellcheck="true">-- 查询年龄最小的学生的出生日期(聚合)</span>
+<span class="token keyword">SELECT</span> <span class="token function">max</span><span class="token punctuation">(</span>stubirth<span class="token punctuation">)</span> <span class="token keyword">FROM</span> tb_student<span class="token punctuation">;</span>
 
--- 查询男女学生的人数(分组和聚合)
-SELECT if(stusex, '男生', '女生') as gender, count(stuid) as c_stu FROM tb_student GROUP BY (stusex);
+<span class="token comment" spellcheck="true">-- 查询男女学生的人数(分组和聚合)</span>
+<span class="token keyword">SELECT</span> <span class="token keyword">if</span><span class="token punctuation">(</span>stusex<span class="token punctuation">,</span> <span class="token string">'男生'</span><span class="token punctuation">,</span> <span class="token string">'女生'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> gender<span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span>stuid<span class="token punctuation">)</span> <span class="token keyword">as</span> c_stu <span class="token keyword">FROM</span> tb_student <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token punctuation">(</span>stusex<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
--- 查询课程编号为1111的课程的平均成绩
--- select avg(score) FROM tb_record GROUP BY (cid) having cid=1111;
-SELECT avg(score) FROM tb_record WHERE cid=1111;
+<span class="token comment" spellcheck="true">-- 查询课程编号为1111的课程的平均成绩</span>
+<span class="token comment" spellcheck="true">-- select avg(score) FROM tb_record GROUP BY (cid) having cid=1111;</span>
+<span class="token keyword">SELECT</span> <span class="token function">avg</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">FROM</span> tb_record <span class="token keyword">WHERE</span> cid<span class="token operator">=</span><span class="token number">1111</span><span class="token punctuation">;</span>
 
--- 查询学号为1001的学生所有课程的平均分
-SELECT avg(score) FROM tb_record WHERE sid=1001;
+<span class="token comment" spellcheck="true">-- 查询学号为1001的学生所有课程的平均分</span>
+<span class="token keyword">SELECT</span> <span class="token function">avg</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">FROM</span> tb_record <span class="token keyword">WHERE</span> sid<span class="token operator">=</span><span class="token number">1001</span><span class="token punctuation">;</span>
 
--- 查询每个学生的学号和平均成绩(分组和聚合)
-SELECT sid, avg(score) FROM tb_record GROUP BY (sid);
+<span class="token comment" spellcheck="true">-- 查询每个学生的学号和平均成绩(分组和聚合)</span>
+<span class="token keyword">SELECT</span> sid<span class="token punctuation">,</span> <span class="token function">avg</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">FROM</span> tb_record <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token punctuation">(</span>sid<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
--- 查询平均成绩大于等于90分的学生的学号和平均成绩(分组和聚合)
-SELECT sid, avg(score) as avg_score FROM tb_record GROUP BY (sid) having avg_score>=90;
+<span class="token comment" spellcheck="true">-- 查询平均成绩大于等于90分的学生的学号和平均成绩(分组和聚合)</span>
+<span class="token keyword">SELECT</span> sid<span class="token punctuation">,</span> <span class="token function">avg</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">as</span> avg_score <span class="token keyword">FROM</span> tb_record <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token punctuation">(</span>sid<span class="token punctuation">)</span> <span class="token keyword">having</span> avg_score<span class="token operator">>=</span><span class="token number">90</span><span class="token punctuation">;</span>
 
--- 查询年龄最大的学生的姓名(子查询)
--- select min(stubirth) from tb_student;
-SELECT stuname FROM tb_student where stubirth=(select min(stubirth) from tb_student);
+<span class="token comment" spellcheck="true">-- 查询年龄最大的学生的姓名(子查询)</span>
+<span class="token comment" spellcheck="true">-- select min(stubirth) from tb_student;</span>
+<span class="token keyword">SELECT</span> stuname <span class="token keyword">FROM</span> tb_student <span class="token keyword">where</span> stubirth<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token function">min</span><span class="token punctuation">(</span>stubirth<span class="token punctuation">)</span> <span class="token keyword">from</span> tb_student<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
--- 查询年龄最大的学生姓名和年龄
-SELECT stuname, DATEDIFF(CURDATE(),stubirth) div 365 as age FROM tb_student where stubirth=(select min(stubirth) from tb_student);
+<span class="token comment" spellcheck="true">-- 查询年龄最大的学生姓名和年龄</span>
+<span class="token keyword">SELECT</span> stuname<span class="token punctuation">,</span> DATEDIFF<span class="token punctuation">(</span>CURDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>stubirth<span class="token punctuation">)</span> <span class="token operator">div</span> <span class="token number">365</span> <span class="token keyword">as</span> age <span class="token keyword">FROM</span> tb_student <span class="token keyword">where</span> stubirth<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token function">min</span><span class="token punctuation">(</span>stubirth<span class="token punctuation">)</span> <span class="token keyword">from</span> tb_student<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
--- 查询选了两门以上的课程的学生姓名(子查询，分组，聚合)
--- select sid FROM tb_record GROUP BY (sid) HAVING count(cid)>2;
-select stuname FROM tb_student where stuid in (select sid FROM tb_record GROUP BY (sid) HAVING count(cid)>2);
+<span class="token comment" spellcheck="true">-- 查询选了两门以上的课程的学生姓名(子查询，分组，聚合)</span>
+<span class="token comment" spellcheck="true">-- select sid FROM tb_record GROUP BY (sid) HAVING count(cid)>2;</span>
+<span class="token keyword">select</span> stuname <span class="token keyword">FROM</span> tb_student <span class="token keyword">where</span> stuid <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token keyword">select</span> sid <span class="token keyword">FROM</span> tb_record <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token punctuation">(</span>sid<span class="token punctuation">)</span> <span class="token keyword">HAVING</span> <span class="token function">count</span><span class="token punctuation">(</span>cid<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
--- 查询学生姓名、课程名称以及成绩(连接查询)
-select stuname, couname, score FROM
-tb_student,
-tb_course,
+<span class="token comment" spellcheck="true">-- 查询学生姓名、课程名称以及成绩(连接查询)</span>
+<span class="token keyword">select</span> stuname<span class="token punctuation">,</span> couname<span class="token punctuation">,</span> score <span class="token keyword">FROM</span>
+tb_student<span class="token punctuation">,</span>
+tb_course<span class="token punctuation">,</span>
 tb_record
-where tb_student.stuid=tb_record.sid and tb_course.couid=tb_record.cid;
+<span class="token keyword">where</span> tb_student<span class="token punctuation">.</span>stuid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>sid <span class="token operator">and</span> tb_course<span class="token punctuation">.</span>couid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>cid<span class="token punctuation">;</span>
 
--- 查询学生姓名、课程名称以及成绩按成绩从高到低查询第11-15条记录
-select stuname, couname, score FROM
-tb_student,
-tb_course,
+<span class="token comment" spellcheck="true">-- 查询学生姓名、课程名称以及成绩按成绩从高到低查询第11-15条记录</span>
+<span class="token keyword">select</span> stuname<span class="token punctuation">,</span> couname<span class="token punctuation">,</span> score <span class="token keyword">FROM</span>
+tb_student<span class="token punctuation">,</span>
+tb_course<span class="token punctuation">,</span>
 tb_record
-where tb_student.stuid=tb_record.sid and tb_course.couid=tb_record.cid
-ORDER BY score DESC
-LIMIT 10, 5;
+<span class="token keyword">where</span> tb_student<span class="token punctuation">.</span>stuid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>sid <span class="token operator">and</span> tb_course<span class="token punctuation">.</span>couid<span class="token operator">=</span>tb_record<span class="token punctuation">.</span>cid
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> score <span class="token keyword">DESC</span>
+<span class="token keyword">LIMIT</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">;</span>
 
--- 查询选课学生的姓名和平均成绩(连接查询，子查询)
-select stuname, avg(score) FROM 
-tb_student as t1, 
-tb_record as t2
-where t1.stuid=t2.sid GROUP BY(sid);
+<span class="token comment" spellcheck="true">-- 查询选课学生的姓名和平均成绩(连接查询，子查询)</span>
+<span class="token keyword">select</span> stuname<span class="token punctuation">,</span> <span class="token function">avg</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">FROM</span> 
+tb_student <span class="token keyword">as</span> t1<span class="token punctuation">,</span> 
+tb_record <span class="token keyword">as</span> t2
+<span class="token keyword">where</span> t1<span class="token punctuation">.</span>stuid<span class="token operator">=</span>t2<span class="token punctuation">.</span>sid <span class="token keyword">GROUP</span> <span class="token keyword">BY</span><span class="token punctuation">(</span>sid<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
--- 方法2：
--- select sid, avg(score) as avg_s FROM tb_record GROUP BY (sid);
-select stuname, avg_s FROM
-tb_student as t1,
-(select sid, avg(score) as avg_s FROM tb_record GROUP BY (sid)) as t2
-where t1.stuid=t2.sid;
+<span class="token comment" spellcheck="true">-- 方法2：</span>
+<span class="token comment" spellcheck="true">-- select sid, avg(score) as avg_s FROM tb_record GROUP BY (sid);</span>
+<span class="token keyword">select</span> stuname<span class="token punctuation">,</span> avg_s <span class="token keyword">FROM</span>
+tb_student <span class="token keyword">as</span> t1<span class="token punctuation">,</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> sid<span class="token punctuation">,</span> <span class="token function">avg</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token keyword">as</span> avg_s <span class="token keyword">FROM</span> tb_record <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token punctuation">(</span>sid<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> t2
+<span class="token keyword">where</span> t1<span class="token punctuation">.</span>stuid<span class="token operator">=</span>t2<span class="token punctuation">.</span>sid<span class="token punctuation">;</span>
 
--- 查询每个学生的姓名和选课数量
-select stuname, count(cid) FROM
-tb_student as t1,
-tb_record as t2
-WHERE t1.stuid=t2.sid 
-GROUP BY (sid);
+<span class="token comment" spellcheck="true">-- 查询每个学生的姓名和选课数量</span>
+<span class="token keyword">select</span> stuname<span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span>cid<span class="token punctuation">)</span> <span class="token keyword">FROM</span>
+tb_student <span class="token keyword">as</span> t1<span class="token punctuation">,</span>
+tb_record <span class="token keyword">as</span> t2
+<span class="token keyword">WHERE</span> t1<span class="token punctuation">.</span>stuid<span class="token operator">=</span>t2<span class="token punctuation">.</span>sid 
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token punctuation">(</span>sid<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
--- select sid, COUNT(cid) as count_c FROM tb_record GROUP BY (sid);
-SELECT stuname, count_c FROM 
-tb_student as t1,
-(select sid, COUNT(cid) as count_c FROM tb_record GROUP BY (sid)) as t2
-WHERE t1.stuid=t2.sid;</code></pre>
+<span class="token comment" spellcheck="true">-- select sid, COUNT(cid) as count_c FROM tb_record GROUP BY (sid);</span>
+<span class="token keyword">SELECT</span> stuname<span class="token punctuation">,</span> count_c <span class="token keyword">FROM</span> 
+tb_student <span class="token keyword">as</span> t1<span class="token punctuation">,</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> sid<span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>cid<span class="token punctuation">)</span> <span class="token keyword">as</span> count_c <span class="token keyword">FROM</span> tb_record <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token punctuation">(</span>sid<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> t2
+<span class="token keyword">WHERE</span> t1<span class="token punctuation">.</span>stuid<span class="token operator">=</span>t2<span class="token punctuation">.</span>sid<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -1168,7 +1168,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">25.7k</span>&nbsp;字
+                class="white-color">26.1k</span>&nbsp;字
             
             <!-- 
             

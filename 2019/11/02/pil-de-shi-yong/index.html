@@ -27,7 +27,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.1.1"><link rel="alternate" href="/atom.xml" title="Fhlsyol" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -355,7 +356,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><a href="https://www.cnblogs.com/lyrichu/p/9124504.html" target="_blank" rel="noopener">PIL的使用</a></p>
-<pre><code>from PIL import Image, ImageFilter, ImageDraw</code></pre><h5 id="1-加载图片"><a href="#1-加载图片" class="headerlink" title="1.加载图片"></a>1.加载图片</h5><pre><code>图片对象 = Image.open(图片地址)</code></pre><h5 id="2-使用滤镜"><a href="#2-使用滤镜" class="headerlink" title="2.使用滤镜"></a>2.使用滤镜</h5><pre class=" language-python"><code class="language-python">image1<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>滤镜效果<span class="token punctuation">)</span>
+<pre><code>from PIL import Image, ImageFilter, ImageDraw</code></pre><h5 id="1-加载图片"><a href="#1-加载图片" class="headerlink" title="1.加载图片"></a>1.加载图片</h5><pre><code>图片对象 = Image.open(图片地址)</code></pre><h5 id="2-使用滤镜"><a href="#2-使用滤镜" class="headerlink" title="2.使用滤镜"></a>2.使用滤镜</h5><pre class="line-numbers language-python"><code class="language-python">image1<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>滤镜效果<span class="token punctuation">)</span>
 <span class="token triple-quoted-string string">"""
 滤镜效果:
 ImageFilter.EMBOSS   -  浮雕效果
@@ -367,27 +368,27 @@ ImageFilter.EDGE_ENHANCE - 边界增强滤波
 ImageFilter.DETAIL - 细节滤波
 ImageFilter.CONTOUR - 轮廓滤波(铅笔画)
 ImageFilter.BLUR - 模糊滤波
-"""</span></code></pre>
-<h5 id="3-图片的剪切"><a href="#3-图片的剪切" class="headerlink" title="3.图片的剪切"></a>3.图片的剪切</h5><pre class=" language-python"><code class="language-python">图片对象<span class="token punctuation">.</span>crop<span class="token punctuation">(</span>范围<span class="token punctuation">)</span>
-范围<span class="token punctuation">:</span> <span class="token punctuation">(</span>起点x坐标<span class="token punctuation">,</span>起点y坐标<span class="token punctuation">,</span> 终点x坐标，终点y坐标<span class="token punctuation">)</span></code></pre>
-<h5 id="4-粘贴"><a href="#4-粘贴" class="headerlink" title="4.粘贴"></a>4.粘贴</h5><pre><code>图片对象1.paste(图片对象2,(x坐标，y坐标))</code></pre><h5 id="5-镜像"><a href="#5-镜像" class="headerlink" title="5.镜像"></a>5.镜像</h5><pre class=" language-python"><code class="language-python">图片对象<span class="token punctuation">.</span>transpose<span class="token punctuation">(</span>对称方式<span class="token punctuation">)</span>
+"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="3-图片的剪切"><a href="#3-图片的剪切" class="headerlink" title="3.图片的剪切"></a>3.图片的剪切</h5><pre class="line-numbers language-python"><code class="language-python">图片对象<span class="token punctuation">.</span>crop<span class="token punctuation">(</span>范围<span class="token punctuation">)</span>
+范围<span class="token punctuation">:</span> <span class="token punctuation">(</span>起点x坐标<span class="token punctuation">,</span>起点y坐标<span class="token punctuation">,</span> 终点x坐标，终点y坐标<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="4-粘贴"><a href="#4-粘贴" class="headerlink" title="4.粘贴"></a>4.粘贴</h5><pre><code>图片对象1.paste(图片对象2,(x坐标，y坐标))</code></pre><h5 id="5-镜像"><a href="#5-镜像" class="headerlink" title="5.镜像"></a>5.镜像</h5><pre class="line-numbers language-python"><code class="language-python">图片对象<span class="token punctuation">.</span>transpose<span class="token punctuation">(</span>对称方式<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># Image.FLIP_LEFT_RIGHT - 左右镜像</span>
-<span class="token comment" spellcheck="true"># Image.FLIP_TOP_BOTTOM - 上下镜像</span></code></pre>
-<h5 id="6-缩放"><a href="#6-缩放" class="headerlink" title="6.缩放"></a>6.缩放</h5><pre><code>图片对象.thumbnail((宽度, 高度))  - 自动按比例缩放</code></pre><h5 id="7-创建空白图片"><a href="#7-创建空白图片" class="headerlink" title="7.创建空白图片"></a>7.创建空白图片</h5><pre class=" language-python"><code class="language-python">Image<span class="token punctuation">.</span>new<span class="token punctuation">(</span>模式<span class="token punctuation">,</span>图片大小<span class="token punctuation">,</span> 背景颜色<span class="token punctuation">)</span>
-empty <span class="token operator">=</span> Image<span class="token punctuation">.</span>new<span class="token punctuation">(</span><span class="token string">'RGB'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<h5 id="8-文字水印"><a href="#8-文字水印" class="headerlink" title="8.文字水印"></a>8.文字水印</h5><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1.创建一个空的图片</span>
+<span class="token comment" spellcheck="true"># Image.FLIP_TOP_BOTTOM - 上下镜像</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h5 id="6-缩放"><a href="#6-缩放" class="headerlink" title="6.缩放"></a>6.缩放</h5><pre><code>图片对象.thumbnail((宽度, 高度))  - 自动按比例缩放</code></pre><h5 id="7-创建空白图片"><a href="#7-创建空白图片" class="headerlink" title="7.创建空白图片"></a>7.创建空白图片</h5><pre class="line-numbers language-python"><code class="language-python">Image<span class="token punctuation">.</span>new<span class="token punctuation">(</span>模式<span class="token punctuation">,</span>图片大小<span class="token punctuation">,</span> 背景颜色<span class="token punctuation">)</span>
+empty <span class="token operator">=</span> Image<span class="token punctuation">.</span>new<span class="token punctuation">(</span><span class="token string">'RGB'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="8-文字水印"><a href="#8-文字水印" class="headerlink" title="8.文字水印"></a>8.文字水印</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1.创建一个空的图片</span>
 Image<span class="token punctuation">,</span>new<span class="token punctuation">(</span>模式<span class="token punctuation">,</span>图片大小<span class="token punctuation">,</span>背景颜色<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># 2.创建font对象</span>
 ImageFont<span class="token punctuation">.</span>truetype<span class="token punctuation">(</span>字体文件<span class="token punctuation">,</span>字体大小<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># 3.创建draw对象</span>
 ImageDraw<span class="token punctuation">.</span>Draw<span class="token punctuation">(</span>图片对象<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># 4.画文字</span>
-draw<span class="token punctuation">.</span>text<span class="token punctuation">(</span>坐标<span class="token punctuation">,</span>文字<span class="token punctuation">,</span>字体对象<span class="token punctuation">,</span>文字颜色<span class="token punctuation">)</span></code></pre>
-<h5 id="9-颜色块"><a href="#9-颜色块" class="headerlink" title="9.颜色块"></a>9.颜色块</h5><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1.创建一个图片对象(可以是空图片，也可以是已经存在的图片)</span>
+draw<span class="token punctuation">.</span>text<span class="token punctuation">(</span>坐标<span class="token punctuation">,</span>文字<span class="token punctuation">,</span>字体对象<span class="token punctuation">,</span>文字颜色<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="9-颜色块"><a href="#9-颜色块" class="headerlink" title="9.颜色块"></a>9.颜色块</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1.创建一个图片对象(可以是空图片，也可以是已经存在的图片)</span>
 <span class="token comment" spellcheck="true"># 2.创建Draw对象</span>
 ImageDraw<span class="token punctuation">.</span>Draw<span class="token punctuation">(</span>图片对象<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># 3.设置点颜色</span>
-Draw对象<span class="token punctuation">.</span>point<span class="token punctuation">(</span>坐标<span class="token punctuation">,</span>颜色<span class="token punctuation">)</span></code></pre>
+Draw对象<span class="token punctuation">.</span>point<span class="token punctuation">(</span>坐标<span class="token punctuation">,</span>颜色<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -852,7 +853,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">25.7k</span>&nbsp;字
+                class="white-color">26.1k</span>&nbsp;字
             
             <!-- 
             

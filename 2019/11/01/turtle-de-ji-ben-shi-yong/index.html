@@ -27,7 +27,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.1.1"><link rel="alternate" href="/atom.xml" title="Fhlsyol" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -355,49 +356,49 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="turtel的使用"><a href="#turtel的使用" class="headerlink" title="turtel的使用"></a>turtel的使用</h2><h5 id="1-基本操作"><a href="#1-基本操作" class="headerlink" title="1. 基本操作"></a>1. 基本操作</h5><p>1.创建画布</p>
-<pre class=" language-python"><code class="language-python">turtle<span class="token punctuation">.</span>setup<span class="token punctuation">(</span>宽度<span class="token punctuation">,</span>高度<span class="token punctuation">)</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">turtle<span class="token punctuation">.</span>setup<span class="token punctuation">(</span>宽度<span class="token punctuation">,</span>高度<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>2.设置笔</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1)设置笔的颜色</span>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1)设置笔的颜色</span>
 turtle<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span>颜色<span class="token punctuation">)</span>   
 <span class="token comment" spellcheck="true"># 2)设置线宽</span>
 turtle<span class="token punctuation">.</span>width<span class="token punctuation">(</span>线宽<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># 3)设置速度</span>
-turtle<span class="token punctuation">.</span>speed<span class="token punctuation">(</span>速度值<span class="token punctuation">)</span>   <span class="token operator">-</span> 速度值是<span class="token number">1</span><span class="token operator">-</span><span class="token number">10</span> 和 <span class="token number">0</span></code></pre>
+turtle<span class="token punctuation">.</span>speed<span class="token punctuation">(</span>速度值<span class="token punctuation">)</span>   <span class="token operator">-</span> 速度值是<span class="token number">1</span><span class="token operator">-</span><span class="token number">10</span> 和 <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>3.控制笔移动</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1）向前走</span>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1）向前走</span>
 turtle<span class="token punctuation">.</span>forward<span class="token punctuation">(</span>距离<span class="token punctuation">)</span><span class="token operator">|</span>turtle<span class="token punctuation">.</span>fd<span class="token punctuation">(</span>距离<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># 2) 向后走</span>
 turtle<span class="token punctuation">.</span>back<span class="token punctuation">(</span>距离<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># 3) 移动到指定位置</span>
 turtle<span class="token punctuation">.</span>goto<span class="token punctuation">(</span>x坐标<span class="token punctuation">,</span> y坐标<span class="token punctuation">)</span><span class="token operator">/</span> turtle<span class="token punctuation">.</span>setx<span class="token punctuation">(</span>x坐标<span class="token punctuation">)</span> <span class="token operator">/</span> turtle<span class="token punctuation">.</span>sety<span class="token punctuation">(</span>y坐标<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># 4) 回到开始位置</span>
-turtle<span class="token punctuation">.</span>home<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+turtle<span class="token punctuation">.</span>home<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>4.控制笔的方向 </p>
-<pre class=" language-Python"><code class="language-Python"># 1)向左转
+<pre class="line-numbers language-Python"><code class="language-Python"># 1)向左转
 turtle.left(角度)
 # 2)向右转
-turtle.right(角度)</code></pre>
+turtle.right(角度)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>5.抬起笔和放下笔</p>
-<pre class=" language-Python"><code class="language-Python"># 1）抬起笔
+<pre class="line-numbers language-Python"><code class="language-Python"># 1）抬起笔
 turtle.up()
 # 2)放下笔
-turtle.down()</code></pre>
+turtle.down()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>6.程序一直运行<br>turtle.mainloop()</p>
 <h5 id="2-画圆"><a href="#2-画圆" class="headerlink" title="2. 画圆"></a>2. 画圆</h5><ol>
-<li>画圆环<pre class=" language-Python"><code class="language-Python">#1) 画一个完整的圆
+<li>画圆环<pre class="line-numbers language-Python"><code class="language-Python">#1) 画一个完整的圆
 circle(半径)
 #2) 画圆环的一部分
-turtle.circle(半径, 角度)</code></pre>
+turtle.circle(半径, 角度)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li>画实心圆<pre class=" language-Python"><code class="language-Python">turtle.dot(直径)</code></pre>
+<li>画实心圆<pre class="line-numbers language-Python"><code class="language-Python">turtle.dot(直径)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ol>
-<h5 id="3-填充"><a href="#3-填充" class="headerlink" title="3.填充"></a>3.填充</h5><pre class=" language-Python"><code class="language-Python"># 设置填充颜色
+<h5 id="3-填充"><a href="#3-填充" class="headerlink" title="3.填充"></a>3.填充</h5><pre class="line-numbers language-Python"><code class="language-Python"># 设置填充颜色
 turtle.fillcolor(颜色)
 # 开始填充
 turtle.begin_fill()
 # 结束填充
-turtle.end_fill()</code></pre>
+turtle.end_fill()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -863,7 +864,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">25.7k</span>&nbsp;字
+                class="white-color">26.1k</span>&nbsp;字
             
             <!-- 
             

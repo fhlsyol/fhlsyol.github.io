@@ -27,7 +27,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.1.1"><link rel="alternate" href="/atom.xml" title="Fhlsyol" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -354,43 +355,43 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Python-基础语法"><a href="#Python-基础语法" class="headerlink" title="Python 基础语法"></a>Python 基础语法</h1><h2 id="1-打印"><a href="#1-打印" class="headerlink" title="1. 打印"></a>1. 打印</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Hello world!'</span><span class="token punctuation">)</span></code></pre>
+                <h1 id="Python-基础语法"><a href="#Python-基础语法" class="headerlink" title="Python 基础语法"></a>Python 基础语法</h1><h2 id="1-打印"><a href="#1-打印" class="headerlink" title="1. 打印"></a>1. 打印</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Hello world!'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="2-注释"><a href="#2-注释" class="headerlink" title="2. 注释"></a>2. 注释</h2><p>单行注释：用”# “隔开的，不参与编译执行的文字（不影响程序功能），专门用来对代，码进行注解和说明的，经常写注释是良好的编程习惯</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 单行注释</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 单行注释</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>多行注释：用”””  “””引起来</p>
-<pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 多行注释
 多行注释
-"""</span></code></pre>
+"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-语句"><a href="#3-语句" class="headerlink" title="3. 语句"></a>3. 语句</h2><p>一条语句占一行，一条语句结束后可以不写分号</p>
 <p>如果一行中需要写多条语句，语句之间必须加分号</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="4-缩进"><a href="#4-缩进" class="headerlink" title="4. 缩进"></a>4. 缩进</h2><p>python中一条语句的开头不能随便加缩进(tab / 4*space)或空格</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> <span class="token number">10</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'10大于1'</span><span class="token punctuation">)</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">if</span> <span class="token number">10</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'10大于1'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="5-标识符"><a href="#5-标识符" class="headerlink" title="5. 标识符"></a>5. 标识符</h2><p>标识符是专门用来给变量、函数、类等命名的</p>
 <p>标识符的命名规范：</p>
 <p>1）由字母、数字或者下划线_组成(在Python3中，其实汉字、日语、汉语等也可以作为标识符，但是强烈不推荐)</p>
 <p>2）数字不能开头</p>
 <h2 id="6-关键字"><a href="#6-关键字" class="headerlink" title="6. 关键字"></a>6. 关键字</h2><p>在Python中有特殊功能或者特殊意义的标识符就是关键字，又叫保留字</p>
 <p>获取关键字的语句：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> keyword
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> keyword
 <span class="token keyword">print</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>keyword<span class="token punctuation">.</span>kwlist<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>keyword<span class="token punctuation">.</span>kwlist<span class="token punctuation">)</span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>keyword<span class="token punctuation">.</span>kwlist<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>结果如下：</p>
-<pre class=" language-markdown"><code class="language-markdown">35
-['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']</code></pre>
+<pre class="line-numbers language-markdown"><code class="language-markdown">35
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>改版本python共有35个关键字</p>
 <h2 id="7-常用数据"><a href="#7-常用数据" class="headerlink" title="7. 常用数据"></a>7. 常用数据</h2><p>1）数字数据：用来表达大小的数据就是数字数据，在程序中直接写即可（支持科学计数法、复数(虚数单位为j)）</p>
-<pre class=" language-python"><code class="language-python"><span class="token number">10</span> <span class="token operator">+</span> <span class="token number">5</span>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token number">10</span> <span class="token operator">+</span> <span class="token number">5</span>
 <span class="token operator">-</span><span class="token number">0.2</span> <span class="token operator">+</span> <span class="token number">0.8</span>
 <span class="token number">2e3</span> <span class="token operator">+</span> <span class="token number">1e2</span>  <span class="token comment" spellcheck="true"># 科学计数法 2000 + 100</span>
-<span class="token number">2</span> <span class="token operator">+</span> <span class="token number">5j</span>  <span class="token comment" spellcheck="true"># 复数，j时必须写成1j</span></code></pre>
+<span class="token number">2</span> <span class="token operator">+</span> <span class="token number">5j</span>  <span class="token comment" spellcheck="true"># 复数，j时必须写成1j</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>2）文本数据(字符串)：文本信息对应的数据，在程序中需要用引号引起来</p>
-<pre class=" language-python"><code class="language-python"><span class="token string">'I love Python!'</span>
-<span class="token string">"I love Python!"</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token string">'I love Python!'</span>
+<span class="token string">"I love Python!"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>3）布尔数据：用True表示真/肯定，用False表示假/否定</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="8-常见的数据类型"><a href="#8-常见的数据类型" class="headerlink" title="8. 常见的数据类型"></a>8. 常见的数据类型</h2><p>通过不同的数据类型对数据进行分类</p>
 <p>整型(int)</p>
 <p>浮点型(float)</p>
@@ -404,36 +405,36 @@
 <p>函数(function)</p>
 <p>三大神器：迭代器(iter)、生成器、装饰器</p>
 <p>…</p>
-<pre class=" language-python"><code class="language-python">type<span class="token punctuation">(</span>数据<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 获取数据的数据类型</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">type<span class="token punctuation">(</span>数据<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 获取数据的数据类型</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="9-输入与输出函数"><a href="#9-输入与输出函数" class="headerlink" title="9. 输入与输出函数"></a>9. 输入与输出函数</h2><p>1）输出函数：print()</p>
 <p>括号里可以写表达式，打印其结果</p>
 <p>同时打印多个表达式：表达式之间可以用逗号隔开</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'打印内容'</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'打印内容'</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">10</span> <span class="token operator">+</span> <span class="token number">50</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'你好'</span><span class="token punctuation">,</span> <span class="token number">123</span><span class="token punctuation">,</span> <span class="token string">'lll'</span><span class="token punctuation">,</span> <span class="token number">20</span> <span class="token operator">+</span> <span class="token number">8</span><span class="token punctuation">)</span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'你好'</span><span class="token punctuation">,</span> <span class="token number">123</span><span class="token punctuation">,</span> <span class="token string">'lll'</span><span class="token punctuation">,</span> <span class="token number">20</span> <span class="token operator">+</span> <span class="token number">8</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>a. 定制换行</p>
 <p>默认情况下，一个print()中的内容会在一行打印</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Hello world'</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">';'</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'aaa'</span><span class="token punctuation">)</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Hello world'</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">';'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'aaa'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>结果为:</p>
-<pre class=" language-markdown"><code class="language-markdown">Hello world;aaa</code></pre>
+<pre class="line-numbers language-markdown"><code class="language-markdown">Hello world;aaa<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>print()函数的end参数默认是回车，上面手动定义为分号，所以可以做到不换行打印</p>
 <p>b. 定制分离</p>
 <p>默认情况下，一个print()打印多个内容的时候，多个内容之间用空格分开</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> sep<span class="token operator">=</span><span class="token string">'+'</span><span class="token punctuation">)</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> sep<span class="token operator">=</span><span class="token string">'+'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>结果为：</p>
-<pre class=" language-markdown"><code class="language-markdown">1+2+3+4</code></pre>
+<pre class="line-numbers language-markdown"><code class="language-markdown">1+2+3+4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>print()函数的sep参数默认是空格，上面手动定义为加号，所以可以做到如上效果</p>
 <p>2）输入函数：input() - 返回输入内容的字符串</p>
 <p>接输入内容的变量 = input(输入提示信息)</p>
-<pre class=" language-python"><code class="language-python">age <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'请输入年龄： '</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-python"><code class="language-python">age <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'请输入年龄： '</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'你今年'</span> <span class="token operator">+</span> age <span class="token operator">+</span> <span class="token string">'岁了！'</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>当程序执行到input时，会暂停下来等输入，按下回车表示输入完成</p>
 <p>结果：</p>
-<pre class=" language-mark"><code class="language-mark">请输入年龄： 18
+<pre class="line-numbers language-mark"><code class="language-mark">请输入年龄： 18
 你今年18岁了
-<class 'str'></code></pre>
+<class 'str'><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>str表示输入函数所返回的数据类型是字符串</p>
 <h1 id="Pycharm基本快捷键"><a href="#Pycharm基本快捷键" class="headerlink" title="Pycharm基本快捷键"></a>Pycharm基本快捷键</h1><table>
 <thead>
@@ -521,22 +522,22 @@
 <p>2）进位：逢10进1</p>
 <p>3）位权：123 = 1*10^2 + 2*10^1 + 3*10^0</p>
 <p>4）表示方式(Python)：直接写</p>
-<pre class=" language-python"><code class="language-python">num1 <span class="token operator">=</span> <span class="token number">123</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">num1 <span class="token operator">=</span> <span class="token number">123</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="2-二进制"><a href="#2-二进制" class="headerlink" title="2. 二进制"></a>2. 二进制</h2><p>1）基数：0,1</p>
 <p>2）进位：逢2进1</p>
 <p>3）位权：1011(2) = 1*2^3 + 0*2^2 + 1*2^1 + 1*2^0</p>
 <p>4）表示方式(Python)：二进制数前加0b/0B</p>
-<pre class=" language-python"><code class="language-python">num2 <span class="token operator">=</span> <span class="token number">0b1011</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">num2 <span class="token operator">=</span> <span class="token number">0b1011</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="3-八进制"><a href="#3-八进制" class="headerlink" title="3. 八进制"></a>3. 八进制</h2><p>1）基数：0,1,2,3,4,5,6,7</p>
 <p>2）进位：逢8进1</p>
 <p>3）位权：5061(8) = 5*8^3 + 0*8^2 + 6*8^1 + 1*8^0</p>
 <p>4）表示方式(Python)：八进制数前加0o/0O</p>
-<pre class=" language-python"><code class="language-python">num3 <span class="token operator">=</span> <span class="token number">0o5061</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">num3 <span class="token operator">=</span> <span class="token number">0o5061</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="4-十六进制"><a href="#4-十六进制" class="headerlink" title="4. 十六进制"></a>4. 十六进制</h2><p>1）基数：0,1,2,3,4,5,6,7,8,9,a(10),b(11),c(12),d(13),e(14),f(15)</p>
 <p>2）进位：逢16进1</p>
 <p>3）位权：1f(16) = 1*16^1 + 15*16^0</p>
 <p>4）表示方式(Python)：十六进制数前加0x/0X</p>
-<pre class=" language-python"><code class="language-python">num4 <span class="token operator">=</span> <span class="token number">0x1f</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">num4 <span class="token operator">=</span> <span class="token number">0x1f</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="5-进制之间的相互转换"><a href="#5-进制之间的相互转换" class="headerlink" title="5. 进制之间的相互转换"></a>5. 进制之间的相互转换</h2><h3 id="方法一：-自己算"><a href="#方法一：-自己算" class="headerlink" title="方法一： 自己算"></a>方法一： 自己算</h3><p>1）十进制转换为其他进制</p>
 <p>辗转取余法自己算</p>
 <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572946820173&di=ce378aeb1cbbb665e7b98910b4a257d5&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D3124073601%2C2617037677%26fm%3D214%26gp%3D0.jpg" alt="辗转取余法"></p>
@@ -561,20 +562,20 @@
 <p>转二进制：bin(数字)</p>
 <p>转八进制：oct(数字)</p>
 <p>转十六进制：hex(数字)</p>
-<pre class=" language-python"><code class="language-python">num1 <span class="token operator">=</span> bin<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-python"><code class="language-python">num1 <span class="token operator">=</span> bin<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
 num2 <span class="token operator">=</span> oct<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
 num3 <span class="token operator">=</span> hex<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">,</span> num3<span class="token punctuation">)</span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">,</span> num3<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>结果：</p>
-<pre class=" language-markdown"><code class="language-markdown">0b1100100 0o144 0x64</code></pre>
+<pre class="line-numbers language-markdown"><code class="language-markdown">0b1100100 0o144 0x64<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="6-原码反码补码"><a href="#6-原码反码补码" class="headerlink" title="6. 原码反码补码"></a>6. 原码反码补码</h2><p>正数的原码、反码、补码是一样的，都是原码</p>
 <p>计算机底层存储数据只能存数字，并且存的是数字的补码，运算也利用的补码</p>
 <p>计算机内存大小(最小单位是位)：</p>
-<pre class=" language-markdown"><code class="language-markdown">1 bytes(字节) = 8 bit(位)
+<pre class="line-numbers language-markdown"><code class="language-markdown">1 bytes(字节) = 8 bit(位)
 1 Kb = 1024 bytes
 1 Mb = 1024 kb
 1 Gb = 1024 Mb
-1 Tb = 1024 Gb</code></pre>
+1 Tb = 1024 Gb<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>向计算机申请内存时，最小的申请单位是1字节，所以原码位数都是8的倍数</p>
 <p>强语言(C、Java等)在申请内存时，很容易造成内存浪费/溢出</p>
 <p>弱语言(Python等)是动态申请的，需要多少申请多少。所以python可以计算9999**9999。</p>
@@ -582,19 +583,19 @@ num3 <span class="token operator">=</span> hex<span class="token punctuation">(<
 <p>原码 = 符号位 + 数字对应的二进制</p>
 <p>即在数字的二进制的最前面加上符号位</p>
 <p>符号位上0表示正，1表示负</p>
-<pre class=" language-markdown"><code class="language-markdown">10(10) -> 1010(2)
+<pre class="line-numbers language-markdown"><code class="language-markdown">10(10) -> 1010(2)
 原码：00001010
--10(10) -> 10001010(原码)</code></pre>
+-10(10) -> 10001010(原码)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>2）反码</p>
 <p>反码就是原码的符号位不变，其他位全部取反</p>
-<pre class=" language-markdown"><code class="language-markdown">-10 -> 10001010(原码)
-反码：11110101</code></pre>
+<pre class="line-numbers language-markdown"><code class="language-markdown">-10 -> 10001010(原码)
+反码：11110101<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>反码存在的意义就是计算补码</p>
 <p>3）补码</p>
 <p>补码就是反码加1</p>
-<pre class=" language-markdown"><code class="language-markdown">-10 -> 11110110(补码)</code></pre>
+<pre class="line-numbers language-markdown"><code class="language-markdown">-10 -> 11110110(补码)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>课堂练习：求130 和 -130 的原码反码补码</p>
-<pre class=" language-markdown"><code class="language-markdown">130
+<pre class="line-numbers language-markdown"><code class="language-markdown">130
 0000000010000010  原码
 0000000010000010  反码
 0000000010000010  补码
@@ -602,10 +603,10 @@ num3 <span class="token operator">=</span> hex<span class="token punctuation">(<
 -130
 1000000010000010  原码
 1111111101111101  反码
-1111111101111110  补码</code></pre>
+1111111101111110  补码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>切记：正数的三码都一样！！！！！！！！</p>
 <p>为什么计算机只存补码？</p>
-<pre class=" language-markdown"><code class="language-markdown">计算机只有加法器，不能进行直接的减法运算
+<pre class="line-numbers language-markdown"><code class="language-markdown">计算机只有加法器，不能进行直接的减法运算
 
 3 + 2 = 5
 3：00000011(原码)
@@ -621,10 +622,10 @@ num3 <span class="token operator">=</span> hex<span class="token punctuation">(<
 3：00000011(补码)
 -2：11111110(补码)
 00000011 + 11111110 = 00000001(补码)(由于是两个1字节相加，所以结果只能是1字节，高出的舍弃)
-结果是1  正确！！！</code></pre>
+结果是1  正确！！！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>同样切记：正数的三码都一样！！！！！！！！！</p>
 <p>课堂练习：-130 + 20</p>
-<pre class=" language-markdown"><code class="language-markdown">-130
+<pre class="line-numbers language-markdown"><code class="language-markdown">-130
 1000000010000010  原码
 1111111101111101  反码
 1111111101111110  补码
@@ -638,7 +639,7 @@ num3 <span class="token operator">=</span> hex<span class="token punctuation">(<
 1111111110010001  (反码)
 1000000001101110  (原码)
 
-结果是-110</code></pre>
+结果是-110<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -1104,7 +1105,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">25.7k</span>&nbsp;字
+                class="white-color">26.1k</span>&nbsp;字
             
             <!-- 
             
