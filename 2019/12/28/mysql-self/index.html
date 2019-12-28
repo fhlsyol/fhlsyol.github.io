@@ -681,13 +681,13 @@ test <span class="token keyword">INT</span>
 <h2 id="3-ER图"><a href="#3-ER图" class="headerlink" title="3. ER图"></a>3. ER图</h2><p>ER图也称实体关系图</p>
 <p>是通过图表的形式来表示数据库中表和字段以及表和表之间的关系</p>
 <p>在NAVIcat等可视化工具里可以通过点击以下按钮来进入ER图界面</p>
-<p><img src="/2019/12/28/mysql/Snipaste_2019-12-24_09-43-25.png" alt></p>
+<p><img src="/2019/12/28/mysql-self/Snipaste_2019-12-24_09-43-25.png" alt></p>
 <p>如图：</p>
-<p><img src="/2019/12/28/mysql/Snipaste_2019-12-24_09-45-13.png" alt></p>
+<p><img src="/2019/12/28/mysql-self/Snipaste_2019-12-24_09-45-13.png" alt></p>
 <p>上图是一张还没有建立连接的ER图(不标准)</p>
 <p>标准的ER图：</p>
-<p><img src="/2019/12/28/mysql/QQ%E5%9B%BE%E7%89%8720191224100241.png" alt></p>
-<p><img src="/2019/12/28/mysql/Snipaste_2019-12-24_11-11-18.png" alt></p>
+<p><img src="/2019/12/28/mysql-self/QQ%E5%9B%BE%E7%89%8720191224100241.png" alt></p>
+<p><img src="/2019/12/28/mysql-self/Snipaste_2019-12-24_11-11-18.png" alt></p>
 <p>表和表之间的关系主要有四种：</p>
 <p>一对一、一对多、多对一、多对多</p>
 <h2 id="4-外键约束"><a href="#4-外键约束" class="headerlink" title="4. 外键约束"></a>4. 外键约束</h2><h3 id="4-1-什么是外键约束"><a href="#4-1-什么是外键约束" class="headerlink" title="4.1 什么是外键约束"></a>4.1 什么是外键约束</h3><p>让字段的值取值范围在另外一张表的主键中</p>
@@ -750,7 +750,7 @@ test <span class="token keyword">INT</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tb_course <span class="token keyword">ADD</span> <span class="token keyword">COLUMN</span> tid <span class="token keyword">INT</span> <span class="token keyword">COMMENT</span> <span class="token string">'上课老师'</span><span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tb_course <span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> fk_tid_cou <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>tid<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> tb_teacher <span class="token punctuation">(</span>teaid<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>结果：</p>
-<p><img src="/2019/12/28/mysql/Snipaste_2019-12-24_11-29-48.png" alt></p>
+<p><img src="/2019/12/28/mysql-self/Snipaste_2019-12-24_11-29-48.png" alt></p>
 <ul>
 <li><p>多对多关系的外键约束</p>
 <p>多对多必须用第三张表来关联</p>
@@ -1056,7 +1056,7 @@ tb_student <span class="token keyword">as</span> t1<span class="token punctuatio
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fhlsyol.top/2019/12/28/mysql/">http://fhlsyol.top/2019/12/28/mysql/</a>
+                    <a href="http://fhlsyol.top/2019/12/28/mysql-self/">http://fhlsyol.top/2019/12/28/mysql-self/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1263,7 +1263,7 @@ tb_student <span class="token keyword">as</span> t1<span class="token punctuatio
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a target="_blank"href="/2019/12/28/mysql/">
+                <a target="_blank"href="/2019/12/28/mysql-self/">
                     <div class="card-image">
                         
                         <img src="https://s2.ax1x.com/2019/12/23/lpsB7D.jpg" class="responsive-img" alt="SQL基础">
@@ -1312,7 +1312,7 @@ tb_student <span class="token keyword">as</span> t1<span class="token punctuatio
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a target="_blank"href="/2019/12/26/mysql-from-luo/">
+                <a target="_blank"href="/2019/12/26/mysql/">
                     <div class="card-image">
                         
                         <img src="https://s2.ax1x.com/2019/12/23/lpsB7D.jpg" class="responsive-img" alt="SQL总结">
