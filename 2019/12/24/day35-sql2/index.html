@@ -358,13 +358,13 @@
                 <h1 id="SQL2"><a href="#SQL2" class="headerlink" title="SQL2"></a>SQL2</h1><h3 id="1-ER图"><a href="#1-ER图" class="headerlink" title="1. ER图"></a>1. ER图</h3><p>ER图也称实体关系图</p>
 <p>是通过图表的形式来表示数据库中表和字段以及表和表之间的关系</p>
 <p>在NAVIcat等可视化工具里可以通过点击以下按钮来进入ER图界面</p>
-<p><img src="day35_SQL2.assets/Snipaste_2019-12-24_09-43-25.png" alt=""></p>
+<p><img src="/2019/12/24/day35-sql2/Snipaste_2019-12-24_09-43-25.png" alt></p>
 <p>如图：</p>
-<p><img src="day35_SQL2.assets/Snipaste_2019-12-24_09-45-13.png" alt=""></p>
+<p><img src="/2019/12/24/day35-sql2/Snipaste_2019-12-24_09-45-13.png" alt></p>
 <p>上图是一张还没有建立连接的ER图(不标准)</p>
 <p>标准的ER图：</p>
-<p><img src="day35_SQL2.assets/QQ%E5%9B%BE%E7%89%8720191224100241.png" alt=""></p>
-<p><img src="day35_SQL2.assets/Snipaste_2019-12-24_11-11-18.png" alt=""></p>
+<p><img src="/2019/12/24/day35-sql2/QQ%E5%9B%BE%E7%89%8720191224100241.png" alt></p>
+<p><img src="/2019/12/24/day35-sql2/Snipaste_2019-12-24_11-11-18.png" alt></p>
 <p>表和表之间的关系主要有四种：</p>
 <p>一对一、一对多、多对一、多对多</p>
 <h3 id="2-外键约束"><a href="#2-外键约束" class="headerlink" title="2. 外键约束"></a>2. 外键约束</h3><p>让字段的值取值范围在另外一张表的主键中</p>
@@ -379,7 +379,7 @@
 <li>一对多和多对一：添加到多的表中</li>
 <li>多对多：两张表没有办法建立多对多的对应关系，需要第三张表才行</li>
 </ul>
-<h3 id="3-外键约束的添加和删除"><a href="#3-外键约束的添加和删除" class="headerlink" title="3. 外键约束的添加和删除"></a>3. 外键约束的添加和删除</h3><h5 id="1）创建表或者添加字段的时候直接在字段后面添加约束"><a href="#1）创建表或者添加字段的时候直接在字段后面添加约束" class="headerlink" title="1）创建表或者添加字段的时候直接在字段后面添加约束"></a>1）创建表或者添加字段的时候直接在字段后面添加约束</h5><p><img src="day35_SQL2.assets/Snipaste_2019-12-24_11-01-09.png" alt=""></p>
+<h3 id="3-外键约束的添加和删除"><a href="#3-外键约束的添加和删除" class="headerlink" title="3. 外键约束的添加和删除"></a>3. 外键约束的添加和删除</h3><h5 id="1）创建表或者添加字段的时候直接在字段后面添加约束"><a href="#1）创建表或者添加字段的时候直接在字段后面添加约束" class="headerlink" title="1）创建表或者添加字段的时候直接在字段后面添加约束"></a>1）创建表或者添加字段的时候直接在字段后面添加约束</h5><p><img src="/2019/12/24/day35-sql2/Snipaste_2019-12-24_11-01-09.png" alt></p>
 <h5 id="2）通过修改表的表示添加和删除约束"><a href="#2）通过修改表的表示添加和删除约束" class="headerlink" title="2）通过修改表的表示添加和删除约束"></a>2）通过修改表的表示添加和删除约束</h5><p>先专门新建一列</p>
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 在学生表中新建一列用来保存学院归属</span>
 <span class="token keyword">alter</span> <span class="token keyword">table</span> tb_stuent <span class="token keyword">add</span> <span class="token keyword">column</span> colid <span class="token keyword">int</span> <span class="token keyword">comment</span> <span class="token string">'所在学院'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -420,7 +420,7 @@
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tb_course <span class="token keyword">ADD</span> <span class="token keyword">COLUMN</span> tid <span class="token keyword">INT</span> <span class="token keyword">COMMENT</span> <span class="token string">'上课老师'</span><span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tb_course <span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> fk_tid_cou <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>tid<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> tb_teacher <span class="token punctuation">(</span>teaid<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>结果：</p>
-<p><img src="day35_SQL2.assets/Snipaste_2019-12-24_11-29-48.png" alt=""></p>
+<p><img src="/2019/12/24/day35-sql2/Snipaste_2019-12-24_11-29-48.png" alt></p>
 <ul>
 <li><p>多对多关系的外键约束</p>
 <p>多对多必须用第三张表来关联</p>
@@ -1168,7 +1168,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">26.1k</span>&nbsp;字
+                class="white-color">26.2k</span>&nbsp;字
             
             <!-- 
             
