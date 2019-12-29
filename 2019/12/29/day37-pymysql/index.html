@@ -332,7 +332,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    782
+                    780
                 </div>
                 
 
@@ -377,8 +377,8 @@
 
 数据库上下文：
 <span class="token code keyword">    游标对象(数据库相关操作)，只有在上下文的缩进里才有效 (相当于文件操作的with open)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="4-执行SQL语句"><a href="#4-执行SQL语句" class="headerlink" title="4. 执行SQL语句"></a>4. 执行SQL语句</h2><p><code>cursor.execute(&#39;SQL语句&#39;)</code></p>
-<h2 id="5-关闭连接"><a href="#5-关闭连接" class="headerlink" title="5. 关闭连接"></a>5. 关闭连接</h2><p><code>连接对象.close()</code></p>
+<h2 id="4-执行SQL语句"><a href="#4-执行SQL语句" class="headerlink" title="4. 执行SQL语句"></a>4. 执行SQL语句</h2><pre class="line-numbers language-python"><code class="language-python">cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">'SQL语句'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="5-关闭连接"><a href="#5-关闭连接" class="headerlink" title="5. 关闭连接"></a>5. 关闭连接</h2><pre class="line-numbers language-python"><code class="language-python">连接对象<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="6-操作实例"><a href="#6-操作实例" class="headerlink" title="6. 操作实例"></a>6. 操作实例</h2><p>由于在python中，SQL语句是通过 <strong>字符串</strong> 利用游标的对象方法传递给数据库的，而python中的字符串操作多种多样，多姿多彩，所以可以利用python的字符串操作来生成需要的SQL语句</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> pymysql
 
