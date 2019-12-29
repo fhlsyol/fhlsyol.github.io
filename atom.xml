@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fhlsyol.top/"/>
-  <updated>2019-12-28T08:59:45.763Z</updated>
+  <updated>2019-12-29T08:17:46.088Z</updated>
   <id>http://fhlsyol.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pymysql基础</title>
+    <link href="http://fhlsyol.top/2019/12/29/day37-pymysql/"/>
+    <id>http://fhlsyol.top/2019/12/29/day37-pymysql/</id>
+    <published>2019-12-29T08:26:11.000Z</published>
+    <updated>2019-12-29T08:17:46.088Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;pymysql基础&quot;&gt;&lt;a href=&quot;#pymysql基础&quot; class=&quot;headerlink&quot; title=&quot;pymysql基础&quot;&gt;&lt;/a&gt;pymysql基础&lt;/h1&gt;&lt;h2 id=&quot;1-安装pymysql&quot;&gt;&lt;a href=&quot;#1-安装pymysql&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库学习" scheme="http://fhlsyol.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="pymysql" scheme="http://fhlsyol.top/tags/pymysql/"/>
+    
+  </entry>
   
   <entry>
     <title>SQL基础</title>
