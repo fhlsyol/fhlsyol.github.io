@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fhlsyol.top/"/>
-  <updated>2019-12-29T08:20:45.513Z</updated>
+  <updated>2019-12-30T01:40:00.610Z</updated>
   <id>http://fhlsyol.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Redis基础</title>
+    <link href="http://fhlsyol.top/2019/12/30/day40-redis/"/>
+    <id>http://fhlsyol.top/2019/12/30/day40-redis/</id>
+    <published>2019-12-30T01:26:11.000Z</published>
+    <updated>2019-12-30T01:40:00.610Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Redis-基础&quot;&gt;&lt;a href=&quot;#Redis-基础&quot; class=&quot;headerlink&quot; title=&quot;Redis 基础&quot;&gt;&lt;/a&gt;Redis 基础&lt;/h1&gt;&lt;h2 id=&quot;1-Redis&quot;&gt;&lt;a href=&quot;#1-Redis&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="缓存" scheme="http://fhlsyol.top/categories/%E7%BC%93%E5%AD%98/"/>
+    
+    
+      <category term="Redis" scheme="http://fhlsyol.top/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>pymysql基础</title>
