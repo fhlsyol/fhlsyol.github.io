@@ -460,7 +460,7 @@ STATIC_URL <span class="token operator">=</span> <span class="token string">'/st
 <p>这个页面就是django-jet的管理界面</p>
 <h2 id="4-开始自己的应用"><a href="#4-开始自己的应用" class="headerlink" title="4. 开始自己的应用"></a>4. 开始自己的应用</h2><p>按照上面的步骤做好准备工作后，就可以开始写自己的应用了</p>
 <h3 id="4-1-数据模型的生成"><a href="#4-1-数据模型的生成" class="headerlink" title="4.1 数据模型的生成"></a>4.1 数据模型的生成</h3><p>ORM(Object Relational Mapping)是通过使用描述对象和数据库之间映射的元数据，将面向对象语言程序中的对象自动持久化到关系数据库中。</p>
-<h4 id="4-1-1-ROM正向工程"><a href="#4-1-1-ROM正向工程" class="headerlink" title="4.1.1 ROM正向工程"></a>4.1.1 ROM正向工程</h4><p>正向工程在这里就是通过模型类来创建表，直接上例子：</p>
+<h4 id="4-1-1-ORM正向工程"><a href="#4-1-1-ORM正向工程" class="headerlink" title="4.1.1 ORM正向工程"></a>4.1.1 ORM正向工程</h4><p>正向工程在这里就是通过模型类来创建表，直接上例子：</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Subject</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">"""学科（模型类）"""</span>
 
@@ -571,8 +571,8 @@ STATIC_URL <span class="token operator">=</span> <span class="token string">'/st
 <p>结果如上图则迁移成功，这时查看数据库发现会创建与模型类相符的这两张表</p>
 <p><img src="/2020/01/13/day50-django/Snipaste_2020-01-12_21-19-13.png" alt></p>
 <p><img src="/2020/01/13/day50-django/Snipaste_2020-01-12_21-19-45.png" alt></p>
-<p>这一步成功后，就代表ROM正向工程成功了</p>
-<h4 id="4-1-2-ROM反向工程"><a href="#4-1-2-ROM反向工程" class="headerlink" title="4.1.2 ROM反向工程"></a>4.1.2 ROM反向工程</h4><p>有时，在我们创建工程之前，数据库的数据就已经有了，这时候就要用数据库的数据进行反向迁移，为我们生成模型类，这就是ROM反向工程</p>
+<p>这一步成功后，就代表ORM正向工程成功了</p>
+<h4 id="4-1-2-ORM反向工程"><a href="#4-1-2-ORM反向工程" class="headerlink" title="4.1.2 ORM反向工程"></a>4.1.2 ORM反向工程</h4><p>有时，在我们创建工程之前，数据库的数据就已经有了，这时候就要用数据库的数据进行反向迁移，为我们生成模型类，这就是ORM反向工程</p>
 <p>由于刚才实现了正向的迁移，所以现在需要把models.py清空，并且把刚才生成的迁移文件0001_initial.py删除，这样才能更好更清晰地看到反向迁移的效果</p>
 <p>由于刚才用正向工程在数据库中生成了tb_subject2和tb_teacher2两张表，接下来的反向工程直接用这两张表来生成模型与刚才的模型对比就能更清楚的看出反向工程的特点</p>
 <p>确认清除完毕后，Alt + F12 打开终端，执行指令</p>
@@ -615,7 +615,7 @@ STATIC_URL <span class="token operator">=</span> <span class="token string">'/st
     <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
         managed <span class="token operator">=</span> <span class="token boolean">False</span>
         db_table <span class="token operator">=</span> <span class="token string">'tb_teacher2'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>我们看到，ROM反向工程自动帮我们把数据库的数据转化为了我们需要的模型类，但是仔细观察一下，一些细节的地方并不能处理的尽善尽美，我们只需要手动微调一下即可。</p>
+<p>我们看到，ORM反向工程自动帮我们把数据库的数据转化为了我们需要的模型类，但是仔细观察一下，一些细节的地方并不能处理的尽善尽美，我们只需要手动微调一下即可。</p>
 <p>待续</p>
 <p>+++</p>
 
